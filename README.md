@@ -42,6 +42,6 @@ Sou mãe do Ravi de 1 ano e meio, estou me descobrindo nesse novo papel, mas per
 
 ## Sprints
 
-- [Sprint 1](/Sprint%201/)
+- [Sprint 1](/sprint_1/)
 
 

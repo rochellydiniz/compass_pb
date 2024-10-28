@@ -1,0 +1,15 @@
+2024/10/25 15:27
+01/03/2023
+31/03/2023
+68
+id,produto,quantidade,preco,data
+156,Notebook Dell,1,1132.11,01/03/2023
+157,Ventilador de coluna,2,2985.89,01/03/2023
+158,Fone de ouvido bluetooth,1,2891.61,01/03/2023
+159,Controle de videogame,2,1479.93,02/03/2023
+160,Monitor de 24 polegadas,1,750.24,03/03/2023
+161,Tablet Samsung,3,2002.05,03/03/2023
+162,Smart TV 50 polegadas,5,1300.34,03/03/2023
+163,Relógio smartwatch,2,484.22,04/03/2023
+164,Cadeira gamer,2,2625.95,04/03/2023
+165,Máquina de lavar roupa,1,2012.64,04/03/2023
