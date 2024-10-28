@@ -2,7 +2,6 @@
 
 ## Apresentação
 
-
 <p align="center">
   <img src="./assets/img_apresentacao/foto_perfil.jpg" alt="Foto de Apresentação" width="200">
 </p>
@@ -14,6 +13,12 @@
 > &#127891;  <strong> Instituição de Ensino:</strong> UNIVESP - Universidade Virtual do Estado de São Paulo<br>    
 > &#128218;  <strong> Curso:</strong> Ciência de Dados    
 > <p><br>
+
+<!-- Emojis utilizados acima na versão do Markdown 
+     :information_desk_person:     
+     :round_pushpin:   
+     :mortar_board:    
+     :books: -->
 
 <br>
 
@@ -32,7 +37,7 @@ Tenho facilidade e adoro trabalhos manuais, muitas vezes faço artesanato para d
 
 Sou mãe do Ravi de 1 ano e meio, estou me descobrindo nesse novo papel, mas percebi que minha paciência e persistência estão maiores desde que ele nasceu. Na maternidade, vivo no dilema de como educar um ser humano que chegou ao mundo totalmente na era digital, sem depender de telas 100% do tempo. Também tenho 2 gatas, a Emma e a Cora Bella, que são as filhas de 4 patas. :teddy_bear::paw_prints:
 
-<br><br>
+<br>
 
 
 ## Sprints
