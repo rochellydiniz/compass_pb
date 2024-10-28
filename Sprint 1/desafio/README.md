@@ -49,12 +49,14 @@ _Evidência 3: Código mv para mover o arquivo para outra pasta. Código cd para
 _Evidência 4: Comando touch para criar um arquivo vazio, finalizando com extensão em .sh para determinar que é um arquivo executável. Comando sudo apt get install nano, para instalar o editor de texto Nano._                               
 
 <br>
+
 * Criar um diretório chamado vendas.
 
 ![Evidência 5](/Sprint%201/evidencias/evid_desafio/etapa4-1/05.jpg)
 _Evidência 5: Comando mkdir para criar o diretório vendas_
 
 <br>
+
 * Copiar o arquivo dados_de_vendas.csv para esta pasta.
 
 ![Evidência 5](/Sprint%201/evidencias/evid_desafio/etapa4-1/05.jpg)
