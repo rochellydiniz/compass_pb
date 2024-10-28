@@ -23,11 +23,21 @@ Ao final dos quatro dias, criar um script consolidador para unir os relatórios 
 
 * Fazer o download do arquivo dados_de_vendas.csv.
 
+![Evidência 1](/Sprint%201/evidencias/evid_desafio/etapa3/01.jpg)
 
+_Evidência 1: Arquivo dados_de_vendas na pasta de downloads no ambiente Linux_              
+<br>
 
-* No Linux, criar o diretório ecommerce.
+* No Linux, criar o diretório ecommerce.             
+
+![Evidência 2](/Sprint%201/evidencias/evid_desafio/etapa3/02.jpg)
+_Evidência 2: Código mkdir para criar a pasta ecommerce._                        
+<br>
 
 * Mover o arquivo dados_de_vendas.csv para o diretório ecommerce.
+
+![Evidência 3](/Sprint%201/evidencias/evid_desafio/etapa3/03.jpg)
+_Evidência 3: Código mv para mover o arquivo para outra pasta. Código cd para entrar dentro do diretório ecommerce_
 
 <br>
 
@@ -35,10 +45,20 @@ Ao final dos quatro dias, criar um script consolidador para unir os relatórios 
 
 * Criar um arquivo executável chamado processamento_de_vendas.sh que realiza as tarefas abaixo através de comandos Linux.
 
+![Evidência 4](/Sprint%201/evidencias/evid_desafio/etapa4-1/04.jpg)
+_Evidência 4: Comando touch para criar um arquivo vazio, finalizando com extensão em .sh para determinar que é um arquivo executável. Comando sudo apt get install nano, para instalar o editor de texto Nano._                               
 
+<br>
 * Criar um diretório chamado vendas.
 
+![Evidência 5](/Sprint%201/evidencias/evid_desafio/etapa4-1/05.jpg)
+_Evidência 5: Comando mkdir para criar o diretório vendas_
+
+<br>
 * Copiar o arquivo dados_de_vendas.csv para esta pasta.
+
+![Evidência 5](/Sprint%201/evidencias/evid_desafio/etapa4-1/05.jpg)
+_Evidência 5: Comando cp para copiar o arquivo do diretório ecommerce para o diretorio ecommerce/vendas._
 
 * Criar o subdiretorio backup dentro do diretório vendas e copiar para o subdiretório o arquivo dados_de_vendas.csv acrescentando no nome do arquivo a data de execução precedida de hífen.
 
