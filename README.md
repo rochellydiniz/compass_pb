@@ -1,17 +1,23 @@
-# Programa de Bolsas - Compass UOL - T1-OUT-24
+# Olá, eu sou a Rochelly Diniz!
 
 ## Apresentação
 
-**Nome:** Rochelly Lopes Santos Diniz  
-**Instituição de Ensino:** UNIVESP - Universidade Virtual do Estado de São Paulo  
-**Curso:** Ciência de Dados  
-**Foto:**   
+<div align="center">
+    <img src="[def]" width="52" alt="Foto de Apresentação" />
+</div>
 
+> 
+> **Nome:** Rochelly Lopes Santos Diniz    
+> **Cidade:** Santos - SP     
+> **Instituição de Ensino:** UNIVESP - Universidade Virtual do Estado de São Paulo    
+> **Curso:** Ciência de Dados  
+>
+   
 
 
 Olá!
 
-Eu sou a Rochelly, servidora pública municipal em transição de carreira, curiosa por natureza e com necessidade de sempre estar aprendendo algo. Estou no 5º Semestre do curso de Ciência de Dados na UNIVESP, voltando a ter contato com TI após um hiato de 10 anos. 
+Eu sou a Rochelly Diniz, servidora pública municipal em transição de carreira, curiosa por natureza e com necessidade de sempre estar aprendendo algo. Estou no 5º Semestre do curso de Ciência de Dados na UNIVESP, voltando a ter contato com TI após um hiato de 10 anos. 
 
 
 Me formei como técnica de informática com ênfase em programação em 2010 e como tecnóloga em Produção Multimídia em 2012, mas nunca segui na área por ter passado no concurso público como Oficial de Administração.
@@ -24,3 +30,12 @@ Tenho facilidade e adoro trabalhos manuais, muitas vezes faço artesanato para d
 
 
 Sou mãe do Ravi de 1 ano e meio, estou me descobrindo nesse novo papel, mas percebi que minha paciência e persistência estão maiores desde que ele nasceu. Na maternidade, vivo no dilema de como educar um ser humano que chegou ao mundo totalmente na era digital, sem depender de telas 100% do tempo.
+
+
+
+
+## Sprints
+
+- [Sprint 1](/Sprint%201/)
+
+[def]: /assets/img_apresentacao/foto_perfil.jpg
