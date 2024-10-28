@@ -1,0 +1,90 @@
+id,produto,quantidade,preco,da,ta
+226,Cadeira gamer,1,145.61,01/04/2023
+227,Secador de cabelo,2,1896.77,01/04/2023
+228,Caixa de som bluetooth,5,96.74,02/04/2023
+229,Notebook Dell,5,4219.76,04/04/2023
+230,Geladeira duplex,3,83.4,06/04/2023
+231,Máquina de lavar roupa,5,103.5,07/04/2023
+232,Xbox Series X,4,2868.23,08/04/2023
+233,Chocolates artesanais,4,48.73,08/04/2023
+234,Smartphone Xiaomi,3,70.3,08/04/2023
+235,Smartphone Xiaomi,3,123.86,09/04/2023
+236,Teclado mecânico,4,112.24,09/04/2023
+237,Carrinho de mão,4,90.73,09/04/2023
+238,Notebook Dell,3,1345.86,10/04/2023
+239,Cesta de Páscoa,4,31.68,10/04/2023
+240,Tablet Samsung,5,143.54,11/04/2023
+241,Ferro de passar,2,138.98,11/04/2023
+242,Tablet Samsung,4,120.37,11/04/2023
+243,Vela aromática,1,124.76,11/04/2023
+244,Caixa de som bluetooth,1,76.71,11/04/2023
+245,Notebook Dell,1,2256.39,12/04/2023
+246,Máquina de lavar roupa,3,104.21,12/04/2023
+247,Toalha temática de Páscoa,3,134.83,12/04/2023
+248,Toalha temática de Páscoa,5,272.49,12/04/2023
+249,Flores artificiais,4,122.74,13/04/2023
+250,Kit de jardinagem,4,218.88,13/04/2023
+251,Chocolates artesanais,4,130.42,13/04/2023
+252,PlayStation 5,4,79.34,14/04/2023
+253,Ar-condicionado portátil,5,135.78,14/04/2023
+254,Caixa de som bluetooth,4,101.29,15/04/2023
+255,Cafeteira italiana,5,1359.46,15/04/2023
+256,Monitor de 24 polegadas,1,62.58,15/04/2023
+257,Carrinho de mão,3,88.51,15/04/2023
+258,Vela aromática,4,51.59,15/04/2023
+259,Fogão de embutir,2,73.61,15/04/2023
+260,Decoração de Páscoa,2,90.81,15/04/2023
+261,Cesta de Páscoa,4,144.66,16/04/2023
+262,Carrinho de mão,4,140.46,16/04/2023
+263,Luminária LED,2,44.54,16/04/2023
+264,Controle de videogame,1,37.36,17/04/2023
+265,Impressora multifuncional,1,84.65,17/04/2023
+266,Fone de ouvido bluetooth,3,52.24,17/04/2023
+267,Mesa de escritório,5,103.33,17/04/2023
+268,Flores artificiais,2,75.0,18/04/2023
+269,Fone de ouvido bluetooth,5,49.77,18/04/2023
+270,Aspirador vertical,5,141.66,18/04/2023
+271,Churrasqueira elétrica,4,1214.55,18/04/2023
+272,Tablet Samsung,5,57.26,18/04/2023
+273,Cesta de Páscoa,2,67.64,19/04/2023
+274,Kit de jardinagem,5,462.67,19/04/2023
+275,Regador de plantas,1,67.8,20/04/2023
+276,Teclado mecânico,1,86.48,20/04/2023
+277,Mesa de escritório,1,33.72,20/04/2023
+278,Torradeira elétrica,4,145.09,20/04/2023
+279,PlayStation 5,5,115.97,20/04/2023
+280,Panela de barro,5,47.46,21/04/2023
+281,Impressora multifuncional,1,51.33,21/04/2023
+282,Luminária LED,2,65.02,21/04/2023
+283,Flores artificiais,1,109.32,21/04/2023
+284,Ovo de Páscoa,3,135.71,21/04/2023
+285,Panela de barro,3,141.74,21/04/2023
+286,Xbox Series X,4,3751.61,22/04/2023
+287,Ar-condicionado portátil,3,114.7,22/04/2023
+288,Relógio smartwatch,3,31.97,22/04/2023
+289,Carregador portátil,1,52.35,23/04/2023
+290,Ovo de Páscoa,2,47.76,23/04/2023
+291,Aspirador vertical,3,120.39,23/04/2023
+292,Churrasqueira elétrica,1,1630.39,23/04/2023
+293,Guirlanda de Páscoa,4,143.56,23/04/2023
+294,Secador de cabelo,3,907.74,24/04/2023
+295,Mesa de escritório,2,136.28,25/04/2023
+296,Cafeteira italiana,3,1104.81,25/04/2023
+297,Micro-ondas,2,120.2,25/04/2023
+298,Relógio smartwatch,1,54.24,25/04/2023
+299,Vela aromática,3,78.27,25/04/2023
+300,Luminária LED,1,126.39,27/04/2023
+301,Tapete para entrada,5,247.28,27/04/2023
+302,Smart TV 50 polegadas,1,4323.57,27/04/2023
+303,Smart TV 50 polegadas,4,4714.95,27/04/2023
+304,Regador de plantas,4,44.58,27/04/2023
+305,Guirlanda de Páscoa,1,62.91,28/04/2023
+306,Torradeira elétrica,2,111.89,28/04/2023
+307,Smartphone Xiaomi,4,149.29,29/04/2023
+308,Máquina de lavar roupa,4,89.57,29/04/2023
+309,Decoração de Páscoa,2,37.31,29/04/2023
+310,Micro-ondas,2,87.77,30/04/2023
+311,Ventilador de coluna,5,117.72,30/04/2023
+312,Relógio smartwatch,1,132.89,30/04/2023
+313,Carregador portátil,1,73.54,30/04/2023
+314,Ventilador de coluna,1,41.06,30/04/2023
