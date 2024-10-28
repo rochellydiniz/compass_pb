@@ -62,9 +62,21 @@ _Evidência 5: Comando mkdir para criar o diretório vendas_
 ![Evidência 5](/Sprint%201/evidencias/evid_desafio/etapa4-1/05.jpg)
 _Evidência 5: Comando cp para copiar o arquivo do diretório ecommerce para o diretorio ecommerce/vendas._
 
-* Criar o subdiretorio backup dentro do diretório vendas e copiar para o subdiretório o arquivo dados_de_vendas.csv acrescentando no nome do arquivo a data de execução precedida de hífen.
+<br>
+
+* Criar o subdiretório backup dentro do diretório vendas e copiar para o backup o arquivo dados_de_vendas.csv acrescentando no nome do arquivo a data de execução precedida de hífen.
+
+![Evidência 6](/Sprint%201/evidencias/evid_desafio/etapa4-1/06.jpg)
+_Evidência 6: Comando mkdir para criar o subdiretório backup. Comando cp para copiar o arquivo dados_de_vendas.csv do diretório vendas *e* para o diretório backup com novo nome._
+
+<br>
 
 * No diretório backup, renomear o arquivo dados-yyyymmdd.csv para backup-dados-yyyymmdd.csv.
+
+![Evidência 7](/Sprint%201/evidencias/evid_desafio/etapa4-1/07.jpg)
+_Evidência 7: Comando cd para entrar na pasta backup. Comando mv para alterar o nome do arquivo._
+
+<br>
 
 * No diretório backup, criar um arquivo chamado relatorio.txt que contenha as informações abaixo.
 

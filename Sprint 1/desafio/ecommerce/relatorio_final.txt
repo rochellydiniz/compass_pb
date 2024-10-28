@@ -1,0 +1,64 @@
+2024/10/23 15:27
+01/01/2023
+31/01/2023
+66
+id,produto,quantidade,preço,data
+1,camiseta,2,29.90,01/01/2023
+2,calça,5,80.00,02/01/2023
+3,sapato,3,100.00,03/01/2023
+4,meia,20,5.00,04/01/2023
+5,cinto,8,15.00,05/01/2023
+6,camisa,7,40.00,06/01/2023
+7,bermuda,6,50.00,07/01/2023
+8,tênis,4,120.00,08/01/2023
+9,bone,12,10.00,09/01/2023
+10,casaco,2,150.00,10/01/2023
+
+2024/10/24 15:27
+01/02/2023
+28/02/2023
+48
+id,produto,quantidade,preco,data
+89,Home theater,8,705.59,01/02/2023
+90,Geladeira,2,361.35,01/02/2023
+92,Tablet,4,223.0,01/02/2023
+93,Geladeira,7,4456.08,02/02/2023
+94,Churrasqueira elétrica,4,827.07,02/02/2023
+95,Roteador Wi-Fi,3,2021.49,02/02/2023
+96,Máquina de lavar,9,1374.12,02/02/2023
+97,Mouse,7,1947.68,03/02/2023
+98,Teclado,5,4225.52,03/02/2023
+99,Geladeira,5,4542.11,04/02/2023
+
+2024/10/25 15:27
+01/03/2023
+31/03/2023
+68
+id,produto,quantidade,preco,data
+156,Notebook Dell,1,1132.11,01/03/2023
+157,Ventilador de coluna,2,2985.89,01/03/2023
+158,Fone de ouvido bluetooth,1,2891.61,01/03/2023
+159,Controle de videogame,2,1479.93,02/03/2023
+160,Monitor de 24 polegadas,1,750.24,03/03/2023
+161,Tablet Samsung,3,2002.05,03/03/2023
+162,Smart TV 50 polegadas,5,1300.34,03/03/2023
+163,Relógio smartwatch,2,484.22,04/03/2023
+164,Cadeira gamer,2,2625.95,04/03/2023
+165,Máquina de lavar roupa,1,2012.64,04/03/2023
+
+2024/10/26 15:27
+01/04/2023
+30/04/2023
+86
+id,produto,quantidade,preco,da,ta
+226,Cadeira gamer,1,145.61,01/04/2023
+227,Secador de cabelo,2,1896.77,01/04/2023
+228,Caixa de som bluetooth,5,96.74,02/04/2023
+229,Notebook Dell,5,4219.76,04/04/2023
+230,Geladeira duplex,3,83.4,06/04/2023
+231,Máquina de lavar roupa,5,103.5,07/04/2023
+232,Xbox Series X,4,2868.23,08/04/2023
+233,Chocolates artesanais,4,48.73,08/04/2023
+234,Smartphone Xiaomi,3,70.3,08/04/2023
+235,Smartphone Xiaomi,3,123.86,09/04/2023
+
