@@ -8,6 +8,7 @@ Praticar comandos Markdown e SO Linux.
 
 <br>
 
+
 ## :thinking: Descrição 
 
 Através dos dados de vendas de uma loja online em arquivo .csv, criar um arquivo executável que realiza tarefas usando comandos do Linux, gerando um relatório com informações específicas.     
