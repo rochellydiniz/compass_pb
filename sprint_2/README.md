@@ -17,6 +17,12 @@ AWS Partner: Sales Accreditation (Business)
 
 <br>
 
+### :jigsaw: Desafio
+
+O desafio dessa sprint é fazer a normalização de uma base de dados e criar os modelos Relacional e Dimensional. O relatório do desafio e os arquivos gerados estão no diretório [desafio](/sprint_2/desafio/README.md).
+
+<br>
+
 ### :brain: Exercícios
 
 <br>
