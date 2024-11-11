@@ -4,211 +4,162 @@
 
 ## :dart: Objetivo
 
-<!-- 
-Praticar comandos Markdown e SO Linux.
---> 
+Praticar conhecimentos de Modelagem de Dados Relacional e Dimensional com Linguagem SQL.
+
 <br>
 
 ## :thinking: Descrição 
-<!--
-Através dos dados de vendas de uma loja online em arquivo .csv, criar um arquivo executável que realiza tarefas usando comandos do Linux, gerando um relatório com informações específicas.     
-Agendar para que este script seja executado todos os dias, de segunda a quinta-feira às 15h27.   
-Ao final dos quatro dias, criar um script consolidador para unir os relatórios gerados em um único arquivo.
--->
+
+Através dos dados de locação de veículos de uma concessionária, normalizar a base de dados e converter o modelo relacional em modelo dimencional.
+
 <br>
 
 ## :heavy_check_mark: Etapas
-<!--
-<br> 
+
 
 * [:scroll: 3. Preparação](#3-preparação)
-* [:woman_technologist: 4.1. Criar um arquivo executável](#41-criar-um-arquivo-executável)
-* [:clock3: 4.2. Agendar a execução do processamento](#42-agendar-a-execução-do-processamento)
-* [:memo: 4.3. Criar novo relatório](#43-criar-novo-relatório)
+* [:woman_technologist: 4.1. Normalizar Base de Dados](#-41-normalizar-base-de-dados)
+* [:chart_with_upwards_trend: 4.2. Modelo Dimensional baseado no Modelo Relacional](#42-modelo-dimensional-baseado-no-modelo-relacional)
 
 <br>
 
 ### :scroll: 3. Preparação
 
-* Fazer o download do arquivo dados_de_vendas.csv.
+* Fazer o download do arquivo concessionaria.zip.
 
-![Evidência 1](/sprint_1/evidencias/evid_desafio/etapa3/01.jpg)                           
-
-_Evidência 1: Arquivo dados_de_vendas na pasta de downloads no ambiente Linux_              
+![Evidência 1](/sprint_2/evidencias/evid_desafio/01.jpg)                           
+_Evidência 1: Arquivo concessionaria.zip na seção "Downloads" do navegador_              
 <br>
 
-* No Linux, criar o diretório ecommerce.             
+* Assistir ao Vídeo Explicativo             
 
-![Evidência 2](/sprint_1/evidencias/evid_desafio/etapa3/02.jpg)                                   
-_Evidência 2: Código ***mkdir*** para criar a pasta ecommerce._                        
+![Evidência 2](/sprint_2/evidencias/evid_desafio/02.jpg)                                   
+_Evidência 2: Vídeo: Explicação Desafio._                        
 <br>
 
-* Mover o arquivo dados_de_vendas.csv para o diretório ecommerce.
+* Após descompactar, abrir o arquivo .sqlite na ferramenta DBeaver.
 
-![Evidência 3](/sprint_1/evidencias/evid_desafio/etapa3/03.jpg)                                      
-_Evidência 3: Código ***mv*** para mover o arquivo para outra pasta. Código cd para entrar dentro do diretório ecommerce_
-
-<br>
-
-### :woman_technologist: 4.1 Criar um arquivo executável
-
-* Criar um arquivo executável chamado processamento_de_vendas.sh que realiza as tarefas abaixo através de comandos Linux.
-
-![Evidência 4](/sprint_1/evidencias/evid_desafio/etapa4-1/04.jpg)                                    
-_Evidência 4: Comando ***touch*** para criar um arquivo vazio, finalizando com extensão em .sh para determinar que é um arquivo executável. Comando ***sudo apt get install nano***, para instalar o editor de texto Nano. Para abrir o editor de texto, realizar o comando ***nano processamento_de_vendas.sh***._                               
+![Evidência 3](/sprint_2/evidencias/evid_desafio/03.jpg) 
+![Evidência 4](/sprint_2/evidencias/evid_desafio/04.jpg)                                      
+_Evidências 3 e 4: Abrir base de dados no DBeaver._
 
 <br>
 
-* Criar um diretório chamado vendas.
 
-![Evidência 5](/sprint_1/evidencias/evid_desafio/etapa4-1/05.jpg)                                          
-_Evidência 5: Comando ***mkdir*** para criar o diretório vendas_
+### :woman_technologist: 4.1 Normalizar Base de Dados
 
-<br>
+* A base de dadods fornecida possui apenas uma tabela com os dados de locação que necessitam ser normalizadas.
 
-* Copiar o arquivo dados_de_vendas.csv para esta pasta.
-
-![Evidência 5](/sprint_1/evidencias/evid_desafio/etapa4-1/05.jpg)                                   
-_Evidência 5: Comando ***cp*** para copiar o arquivo do diretório ecommerce para o diretório ecommerce/vendas._
+![Evidência 5](/sprint_2/evidencias/evid_desafio/05.jpg)                                    
+_Evidência 5: Tabela Locação fornecida._                               
 
 <br>
 
-* Criar o subdiretório backup dentro do diretório vendas e copiar para o backup o arquivo dados_de_vendas.csv acrescentando no nome do arquivo a data de execução precedida de hífen.
+* Primeiro fiz a seleção de tudo o que continha na tabela para visualização dos dados e, de acordo com a **NF1**, os valores na tabela são únicos, podendo seguir para as próximas etapas.
 
-![Evidência 6](/sprint_1/evidencias/evid_desafio/etapa4-1/06.jpg)                                   
-_Evidência 6: Comando ***mkdir*** para criar o subdiretório backup. Comando ***cp*** para copiar o arquivo dados_de_vendas.csv do diretório vendas ***e*** para o diretório backup com novo nome. O comando ao final do nome do arquivo, acrescenta a data de forma dinâmica._
-
-<br>
-
-* No diretório backup, renomear o arquivo dados-yyyymmdd.csv para backup-dados-yyyymmdd.csv.
-
-![Evidência 7](/sprint_1/evidencias/evid_desafio/etapa4-1/07.jpg)                             
-_Evidência 7: Comando ***cd*** para entrar na pasta backup. Comando ***mv*** para alterar o nome do arquivo._
+![Evidência 6](/sprint_2/evidencias/evid_desafio/06.jpg)
+_Evidência 6: Comando ***SELECT***  * para selecionar todos os dados._
 
 <br>
 
-* No diretório backup, criar um arquivo chamado relatorio.txt que contenha as informações abaixo.
+* Quanto aos critérios NF2 e NF3, a tabela precisa de normalizações. Aplicando a **NF2**, criei novas tabelas para separar as dependências parciais.
 
-![Evidência 8](/sprint_1/evidencias/evid_desafio/etapa4-1/08.jpg)                                   
-_Evidência 8: Comando ***touch*** para criar um arquivo .txt. Acrescentei o comando de data ao final do nome do arquivo de relatório também, para que os relatórios dos dias seguintes não sobrescrevessem os dados já gerados._
-
-<br>
-
-* Data do sistema operacional em formato YYYY/MM/DD HH:MM
-
-![Evidência 9](/sprint_1/evidencias/evid_desafio/etapa4-1/09.jpg)                                                   
-_Evidência 9: Comando ***date*** para informar data e hora do sistema operacional. ***Símbolos de maior (>>)*** para incluir essa informação no arquivo de relatório._
+![Evidência 7](/sprint_2/evidencias/evid_desafio/07.jpg)                      
+_Evidência 7: Comando ***CREATE TABLE***  * para criar nova tabela._
 
 <br>
 
-* Data do primeiro registro de vendas.
+* Foram criadas as tabelas tb_carro, tb_cliente, tb_combustivel e tb_vendedor.            
 
-![Evidência 10](/sprint_1/evidencias/evid_desafio/etapa4-1/10.jpg)                                     
-_Evidência 10: Comando ***head*** para mostrar as primeiras informações do arquivo, ***-n 2*** significa que quero mostrar apenas as duas primeiras linhas. ***Pipeline ( | )*** identifica que o comando anterior já terminou e que o próximo pode iniciar. Comando ***tail*** para mostrar, de acordo com o resultado da seleção anterior, as últimas linhas, ***-n 1*** significa que quero mostrar apenas a última linha, descartando nesta situação, o cabeçalho. Comando ***cut*** vai dividir as parte desta linha, utilizando o ***-d"," (delimitador vírgula)*** e mostrar o dado da posição ***-f5*** (quinta coluna). ***Símbolos de maior (>>)*** para incluir essa informação no arquivo de relatório._
-
-<br>
-
-* Data do último registro de vendas.
-
-![Evidência 11](/sprint_1/evidencias/evid_desafio/etapa4-1/11.jpg)                                     
-_Evidência 11: Comando ***tail*** para mostrar as últimas informações do arquivo, ***-n 1*** significa que quero mostrar apenas a última linha. Comando ***cut*** vai dividir as parte desta linha, utilizando o ***-d"," (delimitador vírgula)*** e mostrar o dado da posição ***-f5*** (quinta coluna). ***Símbolos de maior (>>)*** para incluir essa informação no arquivo de relatório._
+![Evidência 8](/sprint_2/evidencias/evid_desafio/08.jpg)  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ![Evidência 9](/sprint_2/evidencias/evid_desafio/09.jpg)                      
+_Evidências 8 e 9: Lista de tabelas criadas. + Tabela tb_vendedor vazia._
 
 <br>
 
-* A quantidade total de itens diferentes vendidos.
+* Após a criação, fiz a inserção dos dados da tb_locação para as tabelas corretas.  
 
-![Evidência 12](/sprint_1/evidencias/evid_desafio/etapa4-1/12.jpg)                                      
-_Evidência 12: Comando ***cut*** vai dividir as parte das linhas deste arquivo, utilizando o ***-d"," (delimitador vírgula)*** e extrair os dados da posição ***-f2*** (segunda coluna). Comando ***tail*** para mostrar as últimas informações do arquivo, ***-n +2*** significa que quero mostrar apenas a partir da 2ª linha, nesta situação, ignorando o cabeçalho (produto). Comando ***uniq*** desconsidera informações duplicadas. Comando ***wc -l*** para contar a quantidade de dados. ***Símbolos de maior (>>)*** para incluir essa informação no arquivo de relatório._
-
-<br>
-
-* As 10 primeiras linhas do arquivo backup-dados-yyyymmdd.csv.
-
-![Evidência 13](/sprint_1/evidencias/evid_desafio/etapa4-1/13.jpg)                                        
-_Evidência 13: Comando ***head*** para mostrar as primeiras informações do arquivo, ***-n 11*** significa que quero mostrar apenas as onze primeiras linhas, como quis manter o cabeçalho para visualização, não excluí a primeira linha. ***Símbolos de maior (>>)*** para incluir essa informação no arquivo de relatório._
+![Evidência 10](/sprint_2/evidencias/evid_desafio/10.jpg)                      
+_Evidência 10: Comando ***INSERT INTO*** para inserir os dados dos campos discriminados da tb_locacao. Utilizado ***SELECT DISTINCT*** para não se repetirem os dados._
 
 <br>
 
-* Resultado dessas tarefas
+* A cada novo bloco inserção, fiz o SELECT para verificar se o resultado estava de acordo com o esperado.
 
-![Evidência 14](/sprint_1/evidencias/evid_desafio/etapa4-1/14.jpg)                                            
-_Evidência 14: Resultado do primeiro relatório gerado._
-
-<br>
-
-* Comprimir o arquivo backup-dados-yyyymmdd.csv para o arquivo backup-dados-yyyymmdd.zip.
-
-![Evidência 15](/sprint_1/evidencias/evid_desafio/etapa4-1/15.jpg)                                      
-_Evidência 15: Comando ***zip*** para comprimir o arquivo._
+![Evidência 11](/sprint_2/evidencias/evid_desafio/11.jpg)                      
+_Evidência 11: tb_cliente preenchida conforme o esperado. NF2 concluída._
 
 <br>
 
-* No diretório backup, apagar o arquivo backup-dados-yyyymmdd.csv. No diretório vendas, apagar o arquivo dados_de_vendas.csv.
+* Ao analisar os dados, verifiquei que para a ***NF3***, nesta base, seria necessário criar uma tabela para combustível, mas que estivesse relacionada com tb_carro, e não com tb_locacao, já que essa é caracterítica do veículo. Como fiz essa conclusão antes mesmo de iniciar a NF2, resolvi já incluir uma chave estrangeira na criação da tb_carro, relacionando com a tb_combustivel.
 
-![Evidência 16](/sprint_1/evidencias/evid_desafio/etapa4-1/16.jpg)                                    
-_Evidência 16: Comando ***rm*** para apagar os arquivos .csv. Neste comando, como os arquivos estão em diretórios diferentes, colocar o endereço absoluto do arquivo, economiza linha de comando. Por experiência própria, prefiro utilizar endereço absoluto na maioria dos comandos._
-
-<br>
-
-### :clock3: 4.2 Agendar a execução do processamento
-
-* Criar um agendamento de execução de comandos Linux para executar o arquivo processamento_de_vendas.sh todos os dias de segunda a quinta-feira às 15h27.
-
-![Evidência 17](/sprint_1/evidencias/evid_desafio/etapa4-2/17.jpg)                                                  
-_Evidência 17: Comando ***crontab -e*** para gerar o agendamento de execução do script. Como foi a primeira vez utilizando este comando, foi solicitado para escolher qual editor de texto utilizar._
+![Evidência 12](/sprint_2/evidencias/evid_desafio/12.jpg)                      
+_Evidência 12: Após declarar as colunas na criação da tabela, utilizei o comando *FOREIGN KEY* para fazer o link da coluna idCombustível entre tb_carro e tb_combustivel. NF3 concluída._
 
 <br>
 
-![Evidência 18](/sprint_1/evidencias/evid_desafio/etapa4-2/18.jpg)                                           
-_Evidência 18: Comando de agendamento. Para os testes, coloquei para rodar o script de minuto a minuto e como tive dificuldades com a realização deles, acrescentei um arquivo [teste.log](/sprint_1/evidencias/evid_desafio/arquivos/teste.log) para debugar. Por este mesmo motivo, não consegui que o agendamento acontecesse de segunda à quinta-feira, portanto, defini que seria executado de quarta-feira à sábado._
+* Neste caso, para não perder nenhuma possível informação importante, renomeei a tabela locação para tb_locacao_original.
+
+![Evidência 13](/sprint_2/evidencias/evid_desafio/13.jpg) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ![Evidência 14](/sprint_2/evidencias/evid_desafio/14.jpg)                      
+_Evidências 13 e 14: Comando ***ALTER TABLE + RENAME TO*** para altarar o nome da tabela._
 
 <br>
 
-* Conceder permissões para execução do script.
+* Criei uma nova tb_locacao para reunir todos os dados necessários próprios e das outras tabelas através das chaves estrangeiras. Logo após, inseri os dados.
 
-![Evidência 17](/sprint_1/evidencias/evid_desafio/etapa4-2/17.jpg)                                                
-_Evidência 17: Comando ***chmod*** para alterar permissões do arquivo, ***+x*** para adicionar a permissão de execução._
-
-<br>
-
-### :memo: 4.3 Criar novo relatório
-
-* Uma vez ao dia, modificar manual e completamente os dados do arquivo de vendas dados_de_vendas.csv que estão no diretório ecommerce.
-
-![Evidência 19](/sprint_1/evidencias/evid_desafio/etapa4-3/19.jpg)                          
-_Evidência 19: Solicitei para que o ChatGPT criasse para mim arquivos para alteração dos dados. Fui refinando até que estivesse mais próximo do resultado que gostaria. Após análise dos dados, fiz algumas alterações manuais._                   
-_Os arquivos estão disponíveis no diretório [evidencias](/sprint_1/evidencias/evid_desafio/arquivos/)._
+![Evidência 15](/sprint_2/evidencias/evid_desafio/15.jpg)    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;    ![Evidência 16](/sprint_2/evidencias/evid_desafio/16.jpg)                      
+_Evidências 15 e 16: Criação da nova tabela Locação. + Inserção dos dados vindos da tb_locacao_original._
 
 <br>
 
-* Certificar-se que o arquivo processamento_de_vendas.sh esteja corretamente agendado.
+* Visualização de como ficou a tb_locacao aplicadas as normalizações.
 
-![Evidência 20](/sprint_1/evidencias/evid_desafio/etapa4-3/20.jpg)                          
-_Evidência 20: Comando ***sudo systemctl status cron*** para verificar se o agendamento está ativo. Os resultados que mostram as palavras destacadas em verde (enabled, active, running), informam que está agendado.                   
-
-<br>
-
-* Criar um script chamado consolidador_de_processamento_de_vendas.sh que une todos os relatórios gerados para um arquivo novo chamado relatorio_final.txt.
-
-![Evidência 21](/sprint_1/evidencias/evid_desafio/etapa4-3/21.jpg)                          
-_Evidência 21: Comando ***touch*** para criar um arquivo vazio, finalizando com extensão em .sh para determinar que é um arquivo executável. Comando ***nano*** para abrir o arquivo executável e codar.                    
+![Evidência 17](/sprint_2/evidencias/evid_desafio/17.jpg)               
+_Evidência 17: Resultado do comando ***SELECT*** para a tabela normalizada. _
 
 <br>
 
-![Evidência 22](/sprint_1/evidencias/evid_desafio/etapa4-3/22.jpg)                          
-_Evidência 22: Comando ***cat*** para concatenar as informações dos relatórios. ***Símbolos de maior (>>)*** para incluir essas informações no arquivo de relatório final. Solicitei que acrescentasse ao relatório final uma linha em branco, através do comando echo, após cada acréscimo de informações dos relatórios, para que a visualização ficasse melhor.
+* Os valores das colunas dataLocacao e dataEntrega, por algum motivo do DBeaver, não manteve a visualização na formatação correta. Mas foi verificado que os dados foram inseridos corretamente e com tipo correto (DATE).
+
+![Evidência 18](/sprint_2/evidencias/evid_desafio/18.jpg)               
+_Evidência 18: Resultado da consulta ***SELECT * FROM tb_locacao*** em forma de texto puro formatado, que comprova que as datas estão em formato YYYYMMDD._
 
 <br>
 
-* Após deversas execuções do script processamento_de_vendas.sh, executar manualmente o script consolidador_de_processamento_de_vendas.sh
+* Na criação do Modelo Relacional, se fosse para manter desta forma, a tb_locacao_original continuaria presente.
 
-![Evidência 23](/sprint_1/evidencias/evid_desafio/etapa4-3/23.jpg)                          
-_Evidência 23: ***Comando ls*** para listar o conteúdo do diretório ecommerce. Comando ***bash*** para executar o script consolidador. Comando ***ls*** para informar que o relatorio final foi criado. Comando ***cat*** para mostrar no terminal o conteúdo do arquivo relatorio_final.txt, demonstrando assim, que a execução foi ***realizada com sucesso*** ._
+![Evidência 19](/sprint_2/evidencias/evid_desafio/19.png)               
+_Evidência 19: Modelo Relacional mostrando a presença da tb_locacao_original sem nenhum relacionamento com outra tabela._
 
 <br>
 
-![Evidência 24](/sprint_1/evidencias/evid_desafio/etapa4-3/24.jpg)                          
-_Evidência 24: Comando ***ls*** para listar o conteúdo do diretório backup, demonstrando que os arquivos csv foram comprimidos, e posteriormente apagados, e os relatórios gerados ao longo dos 4 dias. Comando ***ls*** para listar o conteúdo do diretório vendas, demonstrando que o arquivo .csv presente ali, também foi apagado._
+* Portanto, como todos os dados foram utilizados na nova tb_locacao e as outras tabelas criadas, não fazia mais sentido manter a original, podendo ser excluída.
+
+![Evidência 20](/sprint_2/evidencias/evid_desafio/20.jpg)  
+![Evidência 21](/sprint_2/evidencias/evid_desafio/21.jpg)               
+_Evidências 20 e 21: Comando ***DROP TABLE*** para excluir a tabela da base de dados. + Quando esse comando é executado, o DBeaver abre uma janela pop-up para alertar sobre a possível perda de dados._
+
+<br> <br>
+
+
+### :chart_with_upwards_trend: 4.2 Modelo Dimensional baseado no Modelo Relacional
+
+<br>
+
+* Após concluir toda a etapa anterior, foi necessário apresentar o Modelo Relacional após normalização da base de dados.
+
+![Evidência 22](/sprint_2/evidencias/evid_desafio/22.png)               
+_Evidência 22: ***Modelo Relacional*** extraído do DBeaver após normalização._
+
+<br>
+
+* A partir do Modelo Relacional, foi feito o Modelo Dimensional baseado na evidência anterior. Foi utilizado o modelo ***Star Schema*** para otimizar em tempo de processamento as consultas em grandes volume de dados, sendo as colunas da tb_combustível (no modelo relacional) incorporadas à tabela dim_carro. Aqui, a tabela fato fica no centro da estrela (fato_locacao), interligando-se com as tabelas dimensões como pontas da estrela (dim carro, dim_cliente e dim_vendedor) através de chaves estrangeiras. Suas relações 1 pra N e 1 pra 1, significam que uma locação só pode estar vinculada para um cliente, um carro e um vendedor (1:1). Já no caminho inverso, um carro, um cliente e um vendedor podem fazer e estar presentes em várias locações (1:n).
+
+![Evidência 23](/sprint_2/evidencias/evid_desafio/23.png)               
+_Evidência 23: ***Modelo Dimensional*** com tabela fato e tabelas dimensionais._
+
+<br>
+
+As imagens dos modelos estão no diretório [desafio](/sprint_2/desafio/).
 
 <br>
 
