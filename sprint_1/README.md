@@ -5,7 +5,7 @@ Nesta sprint foram apresentados os princípios de comandos e operações no term
 Já na trilha do Git e GitHub, aprendemos sobre a importância do versionamento, além de boas práticas para a apresentação de um repositório limpo e organizado.  
 <br><br>
 
-- [Desafio](/sprint_1/desafio/README.md)
+- [:jigsaw: Desafio](/sprint_1/desafio/README.md)
 
 **Não houve exercícios e certificados nesta sprint.**
 
