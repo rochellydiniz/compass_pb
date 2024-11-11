@@ -1,4 +1,4 @@
-# Sprint 1 - Linux, Git e GitHub
+# :hourglass_flowing_sand: Sprint 1 - Linux, Git e GitHub
 
 <br>
 Nesta sprint foram apresentados os princípios de comandos e operações no terminal do sistema operacional Linux Ubuntu.

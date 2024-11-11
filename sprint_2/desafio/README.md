@@ -90,7 +90,7 @@ _Evidência 11: tb_cliente preenchida conforme o esperado. NF2 concluída._
 
 <br>
 
-* Ao analisar os dados, verifiquei que para a ***NF3***, nesta base, seria necessário criar uma tabela para combustível, mas que estivesse relacionada com tb_carro, e não com tb_locacao, já que essa é caracterítica do veículo. Como fiz essa conclusão antes mesmo de iniciar a NF2, resolvi já incluir uma chave estrangeira na criação da tb_carro, relacionando com a tb_combustivel.
+* Ao analisar os dados, verifiquei que para a ***NF3***, nesta base, seria necessário criar uma tabela para combustível, mas que estivesse relacionada com tb_carro, e não com tb_locacao, já que essa é característica do veículo. Como fiz essa conclusão antes mesmo de iniciar a NF2, resolvi já incluir uma chave estrangeira na criação da tb_carro, relacionando com a tb_combustivel.
 
 ![Evidência 12](/sprint_2/evidencias/evid_desafio/12.jpg)                      
 _Evidência 12: Após declarar as colunas na criação da tabela, utilizei o comando *FOREIGN KEY* para fazer o link da coluna idCombustível entre tb_carro e tb_combustivel. NF3 concluída._

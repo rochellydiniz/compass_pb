@@ -40,9 +40,9 @@ Sou mãe do Ravi de 1 ano e meio, estou me descobrindo nesse novo papel, mas per
 <br>
 
 
-## Sprints
+## :hourglass_flowing_sand: Sprints
 
-- [Sprint 1](/sprint_1/README.md)
-- [Sprint 2](/sprint_2/README.md)
+- [Sprint 1](/sprint_1/README.md) - 14/10 à 28/10/2024
+- [Sprint 2](/sprint_2/README.md) - 28/10 à 11/11/2024
 
 

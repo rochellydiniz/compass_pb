@@ -1,4 +1,4 @@
-# Sprint 2 - SQL para análise de dados e AWS Partner: Sales Accreditation
+# :hourglass_flowing_sand: Sprint 2 - SQL para análise de dados e AWS Partner: Sales Accreditation
 
 <br>
 
