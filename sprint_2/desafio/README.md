@@ -48,14 +48,14 @@ _Evidências 3 e 4: Abrir base de dados no DBeaver._
 
 ### :woman_technologist: 4.1 Normalizar Base de Dados
 
-* A base de dadods fornecida possui apenas uma tabela com os dados de locação que necessitam ser normalizadas.
+* A base de dados fornecida possui apenas uma tabela com os dados de locação que necessitam ser normalizadas.
 
 ![Evidência 5](/sprint_2/evidencias/evid_desafio/05.jpg)                                    
 _Evidência 5: Tabela Locação fornecida._                               
 
 <br>
 
-* Primeiro fiz a seleção de tudo o que continha na tabela para visualização dos dados e, de acordo com a **NF1**, os valores na tabela são únicos, podendo seguir para as próximas etapas.
+* Primeiro fiz a seleção de tudo o que continha na tabela para visualização dos dados e, de acordo com a **NF1** (normal form / FN - forma normal), os valores na tabela são únicos, podendo seguir para as próximas etapas.
 
 ![Evidência 6](/sprint_2/evidencias/evid_desafio/06.jpg)
 _Evidência 6: Comando ***SELECT***  * para selecionar todos os dados._
