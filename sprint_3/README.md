@@ -4,6 +4,8 @@
 
 ### :writing_hand: Resumo
 
+Nesta sprint trabalhamos com Pyhton em seus comandos básicos e intermediários, realizando desafio utilizando as bibliotecas Pandas e Matplotlib, com intuito de nivelar o conhecimento de todos os bolsitas.                  
+Pela AWS, aprendemos sobre os aspectos econômicos da nuvem.
 Ao final do curso foi emitido um certificado, presente no diretório [certificados](/sprint_3/certificados/).
 
 <br>
@@ -18,6 +20,7 @@ AWS Partner: Cloud Economics
 
 ### :jigsaw: Desafio
 
+ O desafio dessa sprint é praticar em Python, combinando conhecimentos adquiridos no Programa de Bolsas.
  O relatório do desafio e os arquivos gerados estão no diretório [desafio](/sprint_3/desafio/README.md).
 
 <br>
@@ -32,19 +35,5 @@ Abaixo relaciono alguns que gostaria de compartilhar.
 
 <br><br>
 
-#### :books: Biblioteca
-
-<br>
-
-
-<br><br>
-
-#### :shopping_cart: Loja
-
-<br>
-
-
-<br><br>
-
-#### :outbox_tray: Exercícios de exportação
+####  Exercícios de ETL
 
