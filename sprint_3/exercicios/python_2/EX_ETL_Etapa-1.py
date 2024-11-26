@@ -1,30 +1,6 @@
 
 # # Exercício ETL - etapa 1
 
-# with open('actors.csv') as arquivo_base:
-#     linhas = arquivo_base.readlines()
-
-# dados = linhas[1:]
-
-# ator_mais_filmes = ''
-# maior_num_filmes = 0
-
-# for linha in dados:
-#     campos = linha.strip().split(',')
-
-#     try:
-#         actor = campos[0]
-#         number_movies = int(campos[2])
-#     except ValueError:
-#         continue
-    
-#     if number_movies> maior_num_filmes:
-#         maior_num_filmes = number_movies
-#         ator_mais_filmes = actor
-
-# with open ('etapa-1.txt', 'w') as arquivo_saida:
-#     print(f' Ator com mais filmes: {ator_mais_filmes} / Quantidade de filmes: {maior_num_filmes}', file=arquivo_saida)
-
 # Leitura do Arquivo
 with open(r"actors.csv", 'r') as arquivo:
     dados = arquivo.readlines()

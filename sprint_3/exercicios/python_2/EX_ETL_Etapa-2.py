@@ -1,30 +1,6 @@
 
 # Exercício ETL - Etapa 2
 
-# with open('actors.csv') as arquivo_base:
-#     linhas = arquivo_base.readlines()
-
-# dados = linhas[1:]
-
-# soma_bilheteria = 0
-# contador_bilheteria = len(dados)
-
-# for linha in dados:
-#     campos = linha.strip().split(',')
-
-#     try:
-#         top_gross = int(campos[5].replace('.',''))
-#     except ValueError:
-#         continue
-    
-#     soma_bilheteria += top_gross
- 
-# resultado = soma_bilheteria / contador_bilheteria
-
-# with open ('etapa-2.txt', 'w') as arquivo_saida:
-#     print(f'Receita bruta dos principais filmes (em milhoes): ${resultado}', file=arquivo_saida)
-
-
 
 # Leitura do Arquivo
 with open(r"actors.csv", 'r') as arquivo:

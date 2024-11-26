@@ -1,34 +1,6 @@
 
 # Exercício ETL - Etapa 3
 
-# with open('actors.csv') as arquivo_base:
-#     linhas = arquivo_base.readlines()
-
-# dados = linhas[1:]
-
-# ator_maior_average = ''
-# vl_maior_average = 0
-
-# for linha in dados:
-#     campos = linha.strip().split(',')
-
-#     try:
-#         actor = campos[0]
-#  #       total_gross = int(campos[1].replace('.',''))
-#  #       number_movies = int(campos[2])
-#         average_movie = int(campos[3].replace('.',''))
-#  #       top_movie = campos[4]
-#  #       top_gross = int(campos[5].replace('.',''))
-            
-#     except ValueError:
-#         continue
-
-#     if average_movie > vl_maior_average:
-#         vl_maior_average = average_movie
-#         ator_maior_average = actor
-
-
-
 # Leitura do Arquivo
 with open(r"actors.csv", 'r') as arquivo:
     dados = arquivo.readlines()
