@@ -45,5 +45,6 @@ Sou mãe do Ravi de 1 ano e meio, estou me descobrindo nesse novo papel, mas per
 - [Sprint 1](/sprint_1/README.md) - 14/10 à 28/10/2024
 - [Sprint 2](/sprint_2/README.md) - 28/10 à 11/11/2024
 - [Sprint 3](/sprint_3/README.md) - 11/11 à 25/11/2024
+- [Sprint 4](/sprint_4/README.md) - 25/11 à 09/12/2024
 
 
