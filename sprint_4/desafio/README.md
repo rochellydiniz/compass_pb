@@ -5,8 +5,7 @@
 
 ## :dart: Objetivo
 
-Praticar Python com Contaniers Docker combinando conhecimentos adquiridos no Programa de Bolsas.       
-
+Praticar Python com Contaniers Docker combinando conhecimentos adquiridos no Programa de Bolsas.
 
 <br>
 
@@ -18,6 +17,8 @@ Através de um dataset da loja de aplicativos da Google em .csv, criar um arquiv
 <br> -->
 
 ## :heavy_check_mark: Etapas
+
+Obs.: Todas as evidências deste desafio encontram-se no diretório [evidências](../evidencias/evid_desafio/).
 
 <br> 
 

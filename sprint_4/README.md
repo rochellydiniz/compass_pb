@@ -26,7 +26,7 @@ Ao final do curso foram emitidos dois certificados, presentes no diretório [cer
 
 ### :jigsaw: Desafio
 
- <!-- O desafio dessa sprint é praticar em Python, combinando conhecimentos adquiridos no Programa de Bolsas. -->                      
+ <!-- O desafio dessa sprint é praticar em Python, combinando conhecimentos adquiridos no Programa de Bolsas. -->
  O relatório do desafio e os arquivos gerados estão no diretório [desafio](./desafio/README.md).
 
 <br>
