@@ -98,14 +98,14 @@ _*Evidência 04: Subir arquivos.*_
 <br>
 
 ![Evidência Ex05](./evidencias/evid_exercicios/lab-aws-s3/05.jpg)                          
-_*Evidência 05: Subir arquivos.*_
+_*Evidência 05: Incluir os arquivos ``.html`` como documentos de índice e erro.*_
 
 <br>
 
 ![Evidência Ex06](./evidencias/evid_exercicios/lab-aws-s3/06.jpg)                          
-_*Evidência 04: Incluir os arquivos ``.html`` como documentos de índice e erro.*_
+_*Evidência 06: Editar permissões de acesso.*_
 
 <br>
 
 ![Evidência Ex07](./evidencias/evid_exercicios/lab-aws-s3/07.jpg)                          
-_*Evidência 04: Subir arquivos.*_
+_*Evidência 07: Site estático hospedado com sucesso.*_
