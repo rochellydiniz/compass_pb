@@ -78,14 +78,34 @@ _*Cloud Quest: Executar réplica de leitura.*_
 <br>
 
 ![CloudQuestion](./evidencias/evid_exercicios/lab-aws-s3/01.jpg)                          
-Evidência : Mostrando que dentro de Amazon S3, o bucket lab.aws foi criado._
+_*Evidência 01: Mostrando que dentro de Amazon S3, o bucket lab.aws foi criado._
 
 <br>
 
 ![Evidência Ex02](./evidencias/evid_exercicios/lab-aws-s3/03.jpg)                          
-Evidência 02: Seguindo até o campo Hospedagem de site estatistico._
+_*Evidência 02: Seguindo até o campo Hospedagem de site estatistico.*_
 
 <br>
 
-![Evidência Ex02](./evidencias/evid_exercicios/lab-aws-s3/03.jpg)                          
-Evidência 03: Seguindo até o campo Hospedagem de site estatistico._
+![Evidência Ex03](./evidencias/evid_exercicios/lab-aws-s3/03.jpg)                          
+_*Evidência 03: Editar em Hospedagem do site estatistico.*_
+
+<br>
+
+![Evidência Ex04](./evidencias/evid_exercicios/lab-aws-s3/04.jpg)                          
+_*Evidência 04: Subir arquivos.*_
+
+<br>
+
+![Evidência Ex05](./evidencias/evid_exercicios/lab-aws-s3/05.jpg)                          
+_*Evidência 05: Subir arquivos.*_
+
+<br>
+
+![Evidência Ex06](./evidencias/evid_exercicios/lab-aws-s3/06.jpg)                          
+_*Evidência 04: Incluir os arquivos ``.html`` como documentos de índice e erro.*_
+
+<br>
+
+![Evidência Ex07](./evidencias/evid_exercicios/lab-aws-s3/07.jpg)                          
+_*Evidência 04: Subir arquivos.*_
