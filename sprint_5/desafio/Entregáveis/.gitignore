@@ -1,0 +1,2 @@
+# Ignorar arquivos com dados confidenciais
+.env
