@@ -49,7 +49,7 @@ _*Evidência 01 - Página inicial dos buckets no serviço AWS S3. O bucket deste
 
 ![Evidência 02-1](../evidencias/evid_desafio/02-1.jpg)    
 ![Evidência 02-2](../evidencias/evid_desafio/02-2.jpg)                    
-_*Evidência 02 - Código em Python para baixar o dataset diretamente da fonte e subir para o bucket. Importante falar aqui sobre a função ``load_dotenv``. Esta função é utilizada para carregar variáveis de ambiente de um arquivo ``.env`` para o ambiente do sistema. Sendo útil para manter informações sensíveis, como chaves de API e senhas, fora do código-fonte, ao utilisar ``load_dotenv``, essas variáveis podem ser acessadas no código como se fossem definidas diretamente no ambiente do sistema. Neste caso, para manter os dados em sigilo, ao subir no Git, fiz um ``gitignore`` para o arquivo ``.env``.*_
+_*Evidência 02 - Código em Python para baixar o dataset diretamente da fonte e subir para o bucket. Importante falar aqui sobre a função ``load_dotenv``. Esta função é utilizada para carregar variáveis de ambiente de um arquivo ``.env`` para o ambiente do sistema. Sendo útil para manter informações sensíveis, como chaves de API e senhas, fora do código-fonte, ao utilizar ``load_dotenv``, essas variáveis podem ser acessadas no código como se fossem definidas diretamente no ambiente do sistema. Neste caso, para manter os dados em sigilo, ao subir no Git, fiz um ``gitignore`` para o arquivo ``.env``.*_
 
 ![Evidência 02-3](../evidencias/evid_desafio/02-3.jpg)
 
