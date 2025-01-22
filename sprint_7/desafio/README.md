@@ -1,4 +1,4 @@
-# :jigsaw: Desafio - Sprint 6
+# :jigsaw: Desafio - Sprint 7
 
 :calendar: 06/01 à 20/01/2025
 
@@ -15,47 +15,42 @@
 O Desafio de Filmes e Séries está dividido em 5 entregas.                           
 Trata-se de um desafio para construção de um Data Lake, com as estapas de Ingestão, Armazenamento, Processamento e Consumo.
 
-Para começar, é preciso explicar sobre o que se trata o desafio e qual será o motivo da minha análise.
+Nesta Sprint, é preciso explicar os motivadores de utilização de cada API e explicitar as questões que serão respondidas na última etapa do desafio.
 
-_Minha análise busca identificar crianças que atuaram em filmes e séries de terror e mistério. A faixa etárea a ser considerada será a de 0 a 12 anos._
+_Sigo mantendo minha análise sobre a utilização de crianças em elencos principais em títulos do gênero de terror e mistério_
 
-_Vou cruzar o ano de nascimento dos atores com a data de lançamento das produções para responder perguntas como: "Quantas crianças atuaram em produções desses gêneros ao longo do tempo?", "Essas crianças se mantiveram atuando posteriormente?", "Como são as avaliações dessas produções?" e assim por diante._
+_Algumas questões que deverão ser respondidas na útima etapa do desafio: Qual a média de idade das crianças? Quais são as que mais participaram de produções do gênero? Qual a classificação indicativa médias para essas produções? Quantas dessas crianças vieram a óbito ainda na infância?_
 
-_Como exemplo, na série Stranger Things, a atriz Millie Bobby Brown tinha apenas 12 anos quando interpretou a Eleven na primeira temporada. Quero entender se casos como esse são comuns e como eles se distribuem em diferentes produções._
+_Popularmente, o gênero de terror traz algumas crenças, dentre elas a Maldição do Gênero, onde eventos acontecem durante sua produção ou após lançamento, trago o exemplo da atriz Heather O'Rourke de Poltergeist - O Fenômeno. No lançamento do filme, a atriz tinha 07 anos e faleceu aos 12 anos, por um erro médico._
 
 <br>
 
-## :heavy_check_mark: Etapas
+## :heavy_check_mark: Etapas - Entrega 2
 
 Obs.: Todas as evidências deste desafio encontram-se no diretório [evidências](../evidencias/evid_desafio/).
 
 <br>
 
-* [:scroll: 4. Preparação - Entrega 1](#-4-preparação---entrega-1)
-* [:snake: 4.1 Python - Criar script](#-41-python---criar-script)
-* [:whale: 4.2 Docker - Criar container](#-42-docker---criar-container)
-* [:basket: 4.3 S3 - Carga de dados](#-43-aws-s3---carga-de-dados)
+* [:clapper:  The Movie Database](#---the-movie-database)
+* [:closed_lock_with_key: Ingestão de API](#-ingestão-de-api)
+* [:file_folder: Criação da Layer](#-criação-da-layer)
 
 <br>
 
-### :scroll: 4. Preparação - Entrega 1
+### :clapper:   The Movie Database
 
-Fazer o download do arquivo ``Filmes e Series.zip``, necessário para ingestão dos dados.
+Para a entrega desta etapa, foi solicitada a captura de dados da base The Movie Database, através de sua API. O TMDb é gratuito e de código aberto e possui um acervo gigantesco de informações sobre filmes e séries. Com a finalidade de estudo (não comercial), é possível ter acesso à API, livremente.
 
-Criar um bucket no AWS S3 para realização do desafio.
+### 
 
 ![Evidência 0](../evidencias/evid_desafio/0.jpg)         
-_*Evidência 0 - Bucket ``desafio-final.data-lake`` no AWS S3.*_
+_*Evidência 0 - Página inicial do TMDb.*_
 
 <br><br>
 
-### :snake: 4.1 Python - Criar script
+### :closed_lock_with_key: Ingestão de API
 
-Implementar código Python:                    
-* Ler os 2 arquivos (filmes e séries) no formato ``CSV`` inteiros, ou seja, sem filtrar os dados.               
-Utilizar a lib ``boto3`` para carregar os dados para a AWS.             
-* Acessar a AWS e gravar no S3, no bucket definido com RAW Zone.
-* No momento da gravação dos dados, considerar o padrão: ``<nome do bucket>\<camada de armazenamento>\<origem do dado>\<formato do dado>\<especificação do dado>\<data de processamento separada por>\<ano>\<mes>\<dia>\<arquivo>``.
+A ingestão dos dados deve ser realizada capturando as informações do TMDB via AWS Lambda realizando chamadas de API e salvando os resultados coletados em arquivos JSON com o máximo de 100 registros por arquivo.
 
 <br>
 
@@ -67,72 +62,85 @@ _*Evidência 1 - Bibliotecas importadas*_
 
 <br>
 
-Como o container deve ser enviado ao S3, é necessário informar minhas credenciais para acesso à plataforma. Por se tratar de dados sensíveis, foi criado um arquivo ``.env`` protegido pelo ``.gitignore``, para manter o sigilo da informação.               
+É necessário informar minha credencial para acesso à plataforma. Diferente de um script em máquina, no Lambda não é possível utilizar o ``.env``, porém, o Lambda fornece uma opção para registrar as variáveis de ambiente.               
 
 ![Evidência 2](../evidencias/evid_desafio/2.jpg)                       
-_*Evidência 2 - Bloco de código para configurar credenciais da AWS e informações para envio ao bucket correto.*_
+_*Evidência 2 - Gravação da Variável de Ambiente.*_
 
 <br>
 
-Eu tenho um filho de 1 ano e 8 meses que durante esta sprint, além de estar de férias da creche, a escola encontra-se em recesso, retornando ao curso de férias na próxima semana.
-Devido a isso, em alguns momentos, precisei estudar e executar atividades no período em que ele estava dormindo.
-Em um desses dias, ao realizar o desafio já próximo da meia-noite, os diretórios criados no bucket não estavam de acordo com o horário em que estava executando o processo, adiantando para o próximo dia. Então, para resolver a questão, pesquisei sobre alteração de fuso-horário e encontrei a biblioteca ``pytz`` que corrigiu o problema.
+Esse bloco traz as linhas necessárias para configurar o ambiente.
 
 ![Evidência 3](../evidencias/evid_desafio/3.jpg)                       
-_*Evidência 3 - Bloco de código para determinar o fuso horário.*_
+_*Evidência 3 - Variáveis para acesso à API, configuraçõ de fuso horário, bucket onde serão salvos os resultados e endpoints das buscas.*_
 
 <br>
 
-Realizar a leitura dos dois arquvios ``.csv``.
+Função para buscar os dados através dos parâmetros elencados.
 
 ![Evidência 4](../evidencias/evid_desafio/4.jpg)                       
-_*Evidência 4 - Função paara ler os arquivos ``.csv``.*_
+_*Evidência 4 - Esta função resultará em todos os títulos de terror e mistério.*_
 
 <br>
 
 Enviar os arquivos para o Amazon S3. Inclui o código que faz a criação dos diretórios conforme solicitado.
 
 ![Evidência 5](../evidencias/evid_desafio/5.jpg)                       
-_*Evidência 5 - Blocos de código para envio e execução da ingestão.*_
+_*Evidência 5 - Blocos de código para envio dos dados ao bucket no S3.*_
 
-<br><br>
+<br>
 
-### :whale: 4.2 Docker - Criar container                  
+                  
 
-Feito o script, foi preciso realizar a criação do container, montando a imagem através do arquivo ``Dockerfile``. Nas instruções do Dockerfile é solicitado para fazer a instalação das bibliotecas utilizadas no script.
+Determinados os parâmetros, a busca é realizada e os resultados salvos.
 
 ![Evidência 6](../evidencias/evid_desafio/6.jpg)                       
-_*Evidência 6 - Construção da imagem "tageada" como ingestao através do comando ``docker build -t ingestao .``.*_
+_*Evidência 6 - Linhas do bloco ``lambda_handler``.*_
 
 <br>
 
-Ao rodar o container, já solicitei que assim que enviasse ao S3, já fosse excluído esse container, por não ser mais necessária a utilização. Ao final da execução, foi enviado mensagem de conclusão, caso a proposta tivesse sido alcançada.              
+Finalizadas as etapas, o script mostra as informações das quantidade de registros salvos e em quantos arquivos.              
 
 ![Evidência 7](../evidencias/evid_desafio/7.jpg)                       
-_*Evidência 7 - Container executado através do comando ``docker run --rm ingestao``. Arquivos enviados com sucesso!*_
+_*Evidência 7 - No vídeo do desafio, acabo falando a quantidade de arquivos erradas ao mostrar já no bucket. Mas os dados informados no comando ``body`` estão corretos.*_
 
 
 <br><br>
 
-### :basket: 4.3 AWS S3 - Carga de dados
+### :file_folder: Criação da Layer
 
-Abaixo evidencio a criação dos diretórios, conforme esperado, diretamente da plataforma S3.
+Foi necessária a criação de uma layer para instalação das bibliotecas necessárias para execução do script.
 
 ![Evidência 8](../evidencias/evid_desafio/8.jpg)                       
-_*Evidência 8 - No canto superior esquerdo da imagem, é possível ver que foram criados os diretórios...*_               
+_*Evidência 8 - Como o arquivo ``.zip`` ultrapassou o limite de 10mb para carregar diretamente na camada, salvei o mesmo no bucket do desafio.*_               
 
 <br>
+
+Também foi preciso a criação de uma Role no IAM.
 
 ![Evidência 9](../evidencias/evid_desafio/9.jpg)                       
-_*Evidência 9 - ... que se separam de acordo com sua própria base de dados, sendo criado um para filmes...*_
+_*Evidência 9 - Role ``TMDbFuncao_DesafioFinal``*_
 
 <br>
 
+E após muita tentativa e erro...
 ![Evidência 10](../evidencias/evid_desafio/10.jpg)                       
-_*Evidência 10 - ... e um para as séries.*_
+_*Evidência 10 - ... finalmente chega a mensagem de sucesso.*_
+
+<br>
+
+![Evidência 11](../evidencias/evid_desafio/11.jpg)                       
+_*Evidência 11 - Os arquivos foram salvos de acordo com o solicitado tanto para filmes..*_
+
+<br>
+
+![Evidência 12](../evidencias/evid_desafio/12.jpg)                       
+_*Evidência 12 - ... quanto para as séries.*_
 
 
 <br><br>
 
 :white_check_mark:
 :sun_with_face:
+
+

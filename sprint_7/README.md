@@ -7,65 +7,17 @@
 - 
 
 
-
-Ao final da sprint foram emitidos nove certificados, presentes abaixo e no diretório [certificados](./certificados/).
-
 <br>
 
 ### :trophy: Certificados
 
-- Fundamentals of Analytics on AWS - Part 1
-
-![Fundamentals of Analytics on AWS - Part 1](./certificados/s6_AWS-Fundamentals-of-Anelytics-on-AWS-Part-1.jpg)
-<br><br>
-
-- Fundamentals of Analytics on AWS - Part 2
-
-![Fundamentals of Analytics on AWS - Part 2](./certificados/s6_AWS-Fundamentals-of-Anelytics-on-AWS-Part-2.jpg)
-<br><br>
-
-- Getting Started with Amazon Redshift
-
-![Getting Started with Amazon Redshift](./certificados/s6_AWS-Getting-Started-with-Amazon-Redshift.jpg)
-<br><br>
-
-- Best Practices for Data Warehousing with Amazon Redshift
-
-![Best Practices for Data Warehousing with Amazon Redshift](./certificados/s6_AWS-Best-Practices-for-Data-Warehousing-with-Amazon-Redshift.jpg)
-<br><br>
-
-- Introduction to Amazon Athena
-
-![Introduction to Amazon Athena](./certificados/s6_AWS-Introduction-to-Amazon-Athena.jpg)
-<br><br>
-
-- Serverless Analytics
-
-![Serverless Analytics](./certificados/s6_AWS-Serverless-Analytics.jpg)
-<br><br>
-
-- Amazon EMR Getting Started
-
-![Amazon EMR Getting Started](./certificados/s6_AWS-Amazon-EMR-Getting-Started.jpg)
-<br><br>
-
-- Amazon Glue Getting Started
-
-![Amazon Glue Getting Started](./certificados/s6_AWS-Amazon-Glue-Getting-Started.jpg)
-<br><br>
-
-
-- Amazon QuickSight Getting Started
-
-![Amazon QuickSight Getting Started](./certificados/s6_AWS-Amazon-QuickSight-Getting-Started.jpg)
-<br><br>
-
+Nessa Sprint não houve curso externo, portanto, não há certificado a ser apresentado.
 
 <br>
 
 ### :jigsaw: Desafio
 
- O desafio dessa sprint é praticar a combinação de conhecimentos vistos no Programa de Bolsas, fazendo um mix de tudo que já foi dito.          
+ O objetivo dessa sprint é complementa os dados dos Filmes e Séries com dados oriundos da API do TMDB.
  O relatório do desafio e os arquivos gerados estão no diretório [desafio](./desafio/README.md).
 
 <br>
@@ -80,144 +32,134 @@ Abaixo relaciono alguns que gostaria de compartilhar.
 
 <br>
 
-#### Lab 2 - S3
+#### 5 - Exercício Apache Spark - Contador de Palavras
 
-Criação de bucket para hospedagem de site estático!
+Desenvolvimento de job de processamento com o framework Spark por meio de container Docker.
 
-![Evidência Lab2-1](./evidencias/evid_exercicios/Evid_lab2/1.jpg)              
-_*Evidência Lab2-1 - Criado bucket.*_
 
-<br>
+* Para começar, foi necessário o ``pull`` de uma imagem para utilizar o Jupyter pelo Shell do Spark.                          
 
-![Evidência Lab2-2](./evidencias/evid_exercicios/Evid_lab2/2.jpg)
-_*Evidência Lab2-2 - Edição da política de bucket.*_
+![Evidência Ex5-1](./evidencias/evid_exercicios/5_Ex_Apache_Spark/1.jpg)              
+_*Evidência Ex5-1 - Container rodando, utilizando comando complementado de ``-it`` para execução de forma interativa.*_
 
 <br>
 
-![Evidência Lab2-3](./evidencias/evid_exercicios/Evid_lab2/3.jpg)
-_*Evidência Lab2-3 - Carregando o arquivo ``.csv`` e as páginas de ``index.html`` e ``erro.html``.*_
+
+* O container fornece um link para acessar o Jupyter Lab no navegador.              
+
+![Evidência Ex5-2](./evidencias/evid_exercicios/5_Ex_Apache_Spark/2.jpg)              
+_*Evidência EX5-2 - Interface do Jupyter Lab.*_
 
 <br>
 
-![Evidência Lab2-4](./evidencias/evid_exercicios/Evid_lab2/4.jpg)
-_*Evidência Lab2-4 - Edição da hospedagem de site estático.*_
+* Criado código para um contador de palavras de um arquivo Markdown. Depois de alguns testes, cheguei ao código final.          
+
+![Evidência Ex5-3](./evidencias/evid_exercicios/5_Ex_Apache_Spark/3.jpg)              
+_*Evidência Ex5-3 - Não consegui baixar o arquivo ``.py`` que foi gerado no shell, então a evidência que tenho é esse print.*_
 
 <br>
 
-![Evidência Lab2-5](./evidencias/evid_exercicios/Evid_lab2/5.jpg)
-_*Evidência Lab2-5 - Resultado da hospedagem.*_
+* Utilizei um README de sprints anteriores para usar no exercício. Refinei da forma que achei mais prudente, desconsiderando "palavras" com menos de 4 letras, algumas preposições, artigos, caracteres especiais etc.                         
+
+![Evidência Ex5-4](./evidencias/evid_exercicios/5_Ex_Apache_Spark/4.jpg)              
+_*Evidência Ex5-4 - Ao final, o resultado foi impresso no terminal.*_
+
+<br>
+
+* Este foi o resultado do script, após refinamento.                             
+
+![Evidência Ex5-5](./evidencias/evid_exercicios/5_Ex_Apache_Spark/5.jpg)              
+_*Evidência Ex5-5 - Sendo ``evidência`` palavra mais utilizada.*_
 
 <br><br>
 
-#### Lab 3 - Athena
+#### 6 - Exercício TMDB
 
-Criação de banco de dados e tabela, utilizando o mesmo arquivo do exercício anterior. O resultado do lab está na pasta de [exercícios](./exercicios/)
+Criação de processo de extração de dados da API do TMDB utilizando serviços AWS. O resultado do exercício está na pasta de [exercícios](./exercicios/)
 
-![Evidência Lab3-1](./evidencias/evid_exercicios/Evid_lab3/1.jpg)              
-_*Evidência Lab3-1 - Criado bucket com diretório ``queries/`` e arquivo ``nomes.csv``.*_
 
 <br>
 
-![Evidência Lab3-2](./evidencias/evid_exercicios/Evid_lab3/2.jpg)
-_*Evidência Lab3-2 - Criado banco de dados ``meubanco``.*_
+* O primeiro passo deste exercício é a criação de conta no TMDB.                         
+
+![Evidência Ex6-1](./evidencias/evid_exercicios/6_Ex_TMDB/1.jpg)              
+_*Evidência Ex6-1 - Após algumas instruções de configuração o TMDB fornece a chave token que permite as buscas da API.*_
 
 <br>
 
-![Evidência Lab3-3](./evidencias/evid_exercicios/Evid_lab3/3.jpg)
-_*Evidência Lab3-3 - Criada a tabela ``ranking_nomes``.*_
+* No conteúdo presente na Udemy, nos é apresentado um passo-a-passo para criar um teste utilizando endpoint de filme e, após isso, executarmos o exercício.                         
 
-<br>
+* Para o meu código, utilizei o endpoint de séries para mostrar os títulos melhores avaliados. Apesar de parecer ser igual ao de séries, é possível analisar no código que algumas colunas não são iguais nos dois tipos.
 
-![Evidência Lab3-4](./evidencias/evid_exercicios/Evid_lab3/4.jpg)
-_*Evidência Lab3-4 - Realizada querie teste.*_
+![Evidência Ex6-2](./evidencias/evid_exercicios/6_Ex_TMDB/2.jpg)              
+_*Evidência Ex6-2 - Resultado do script que ao final é salvo também em arquivo ``.csv``.*_
 
-<br>
-
-![Evidência Lab3-5](./evidencias/evid_exercicios/Evid_lab3/5.jpg)
-_*Evidência Lab3-5 - Código feito para levantar os 3 nomes mais registrados desde a década de 50, que é a proposta do laboratório.*_
-
-<br>
-
-![Evidência Lab3-6](./evidencias/evid_exercicios/Evid_lab3/6.jpg)
-_*Evidência Lab3-6 - Resultado da querie.*_
 
 <br><br>
 
-#### Lab 4 - Lambda
+#### 7 - Lab Glue
 
-Criação de função Lambda.
-
-![Evidência Lab4-1](./evidencias/evid_exercicios/Evid_lab4/1.jpg)              
-_*Evidência Lab4-1 - Criada a função Lambda utilizando Python.*_
+Construção de um processo de ETL simplificado utilizando AWS Glue.
 
 <br>
 
-![Evidência Lab4-2](./evidencias/evid_exercicios/Evid_lab4/2.jpg)
-_*Evidência Lab4-2 - Criado teste de evento.*_
+* Foi fornecido um arquivo ``.csv`` para ser salvo em um bucket no S3 com path determinado.                         
+
+![Evidência Lab7-1](./evidencias/evid_exercicios/7_Lab_AWS_Glue/1.jpg)              
+_*Evidência Lab7-1 - Arquivo salvo conforme determinado.*_
 
 <br>
 
-![Evidência Lab4-3](./evidencias/evid_exercicios/Evid_lab4/3.jpg)
-_*Evidência Lab4-3 - Execução falha  do teste de evento.*_
+* Também foi ensinada a criação de Role (através do IAM) para os Jobs do Glue.                         
+
+![Evidência Lab7-2](./evidencias/evid_exercicios/7_Lab_AWS_Glue/2.jpg)              
+_*Evidência Lab7-2 - Criado Role ``AWSGlueServiceRole-Lab4`` associada às políticas geridas pela AWS.*_
 
 <br>
 
-![Evidência Lab4-4](./evidencias/evid_exercicios/Evid_lab4/4.jpg)
-_*Evidência Lab4-4 - Criado Dockerfile e construída sua imagem.*_
+* Após muito outros passos de configuração, criamos o Job.                         
+
+![Evidência Lab7-3](./evidencias/evid_exercicios/7_Lab_AWS_Glue/3.jpg)              
+_*Evidência Lab7-3 - Assim como nos exercícios anteriores, primeiro criamos um teste do conteúdo da Udemy e depois fazemos nosso próprio exercício.*_
 
 <br>
 
-![Evidência Lab4-5](./evidencias/evid_exercicios/Evid_lab4/5.jpg)
-_*Evidência Lab4-5 - Criação da camada com a biblioteca pandas recebida por container no passo anterior.*_
+* Código feito, após alguns erros no caminho, o job é executado com sucesso.                         
+
+![Evidência Lab7-4](./evidencias/evid_exercicios/7_Lab_AWS_Glue/4.jpg)              
+_*Evidência Lab7-4 - Resultado do script codado no Athena. O código deve ler o arquivo do bucket, imprimir o schema, deixar os nomes em ``CAIXA ALTA``, imprimir a contagem de linhas, de nomes, dentre outras especificações.*_
 
 <br>
 
-![Evidência Lab4-6](./evidencias/evid_exercicios/Evid_lab4/6.jpg)
-_*Evidência Lab4-6 - Adicionando camada criada à função.*_
+* Alguns requisitos foram dados para o arquivos de saída.                         
+
+![Evidência Lab7-5](./evidencias/evid_exercicios/7_Lab_AWS_Glue/5.jpg)              
+_*Evidência Lab7-5 - A gravação deve ser em path específico, em formato JSON e particionados por ``Sexo`` e ``Ano``.*_
 
 <br>
 
-![Evidência Lab4-7](./evidencias/evid_exercicios/Evid_lab4/7.jpg)
-_*Evidência Lab4-7 - Propriedades da função, informando a exixtência da camada criada.*_
+* Resultando nos diretórios apresentados.                         
+
+![Evidência Lab7-6](./evidencias/evid_exercicios/7_Lab_AWS_Glue/6.jpg)              
+_*Evidência Lab7-6 - Foram divididos primeiramente em sexo e depois em anos.*_
 
 <br>
 
-![Evidência Lab4-8](./evidencias/evid_exercicios/Evid_lab4/8.jpg)
-_*Evidência Lab4-8 - Função testada com sucesso.*_
+* Foi dada a dica de verificar os Logs de execução.                         
 
-Apesar de não ter registrado as evidências, foi necessário ajustes na permissão do bucket no S3 e aumento de tempo limite e memória na função do Lmabda.
-
-<br><br>
-
-
-#### Lab 5 - Excluir todos os materiais realizados na AWS para os laboratórios
-
-Para não correr o risco de gastos desnecessários, foi solicitado para que fosse excluído tudo o que foi gerado para os laboratórios, presentes nos serviços AWS.
-
-![Evidência Lab5-1](./evidencias/evid_exercicios/Evid_lab5/1.jpg)              
-_*Evidência Lab5-1 - Exclusão da função ``myLambdaFunction``.*_
+![Evidência Lab7-7](./evidencias/evid_exercicios/7_Lab_AWS_Glue/7.jpg)              
+_*Evidência Lab7-7 - Logs de Execução.*_
 
 <br>
 
-![Evidência Lab5-2](./evidencias/evid_exercicios/Evid_lab5/2.jpg)
-_*Evidência Lab5-2 - Exclusão do bucket ``lab.aws`` utilizado na sprint anterior.*_
+* E mais detalhadamente no ``CloudWatch continuous logs``.                         
+
+![Evidência Lab7-8](./evidencias/evid_exercicios/7_Lab_AWS_Glue/8.jpg)              
+_*Evidência Lab7-8 - Detalhes do grupo de logs.*_
 
 <br>
 
-![Evidência Lab5-3](./evidencias/evid_exercicios/Evid_lab5/3.jpg)
-_*Evidência Lab5-3 - Exclusão do bucket ``sprint6-lab-aws-s3`` utilizado nesta sprint.*_
+* Por fim, foi criado um ``Crawler``, que cria uma tabela a partir do s dados escritos no S3 de forma automática.                         
 
-<br>
-
-![Evidência Lab5-4](./evidencias/evid_exercicios/Evid_lab5/4.jpg)
-_*Evidência Lab5-4 - Exclusão do bucket ``sprint6-lab-aws-athena`` utilizado nesta sprint.*_
-
-<br>
-
-![Evidência Lab5-5](./evidencias/evid_exercicios/Evid_lab5/5.jpg)
-_*Evidência Lab5-5 - Exclusão do bucket ``sprint6-lab-aws-lambda`` utilizado nesta sprint.*_
-
-<br>
-
-![Evidência Lab5-6](./evidencias/evid_exercicios/Evid_lab5/6.jpg)
-_*Evidência Lab5-6 - Tela do Amazon S3 após exclusão dos buckets criados em laboratório.*_
+![Evidência Lab7-9](./evidencias/evid_exercicios/7_Lab_AWS_Glue/9.jpg)              
+_*Evidência Lab7-9 - Neste exercício foi determinado que a frequência de execução fosse realizada apenas ``on demand``.*_

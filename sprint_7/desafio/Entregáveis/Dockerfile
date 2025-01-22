@@ -1,5 +1,6 @@
-FROM python:3.9-slim
-RUN pip install boto3 python-dotenv pandas pytz tmdbv3api requests
-WORKDIR /img
-COPY . .
-CMD ["python", "ingestao_api_tmdb_aws.py"]
+FROM amazonlinux:2023
+RUN yum update -y
+RUN yum install -y \
+python3-pip \
+zip
+RUN yum -y clean all
