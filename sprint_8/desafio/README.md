@@ -1,6 +1,6 @@
-# :jigsaw: Desafio - Sprint 7
+# :jigsaw: Desafio - Sprint 8
 
-:calendar: 06/01 à 20/01/2025
+:calendar: 20/01 à 03/02/2025
 
 <br>
 
@@ -25,7 +25,7 @@ _Popularmente, o gênero de terror traz algumas crenças, dentre elas a Maldiç�
 
 <br>
 
-## :heavy_check_mark: Etapas - Entrega 2
+## :heavy_check_mark: Etapas - Entrega 3
 
 Obs.: Todas as evidências deste desafio encontram-se no diretório [evidências](../evidencias/evid_desafio/).
 
@@ -37,110 +37,40 @@ Obs.: Todas as evidências deste desafio encontram-se no diretório [evidências
 
 <br>
 
-### :clapper:   The Movie Database
+### ::   Camada Trusted
 
-Para a entrega desta etapa, foi solicitada a captura de dados da base The Movie Database, através de sua API. O TMDb é gratuito e de código aberto e possui um acervo gigantesco de informações sobre filmes e séries. Com a finalidade de estudo (não comercial), é possível ter acesso à API, livremente.
-
-### 
-
-![Evidência 0](../evidencias/evid_desafio/0.jpg)         
-_*Evidência 0 - Página inicial do TMDb.*_
+A camada Trusted de um Data Lake reúne os dados já tratados que vieram da camada RAW. Os dados deverão ser salvos no formato ``.parquet``, particionados por data de ingestão no bucket quando no diretório do TMDB.  O Parquet reduz o tempo de leitura por ser de armazenamento colunar, comprime os dados, diminuindo espaço e reduzindo custos.
 
 <br><br>
 
-### :closed_lock_with_key: Ingestão de API
+### :: Jobs AWS Glue
 
-A ingestão dos dados deve ser realizada capturando as informações do TMDB via AWS Lambda realizando chamadas de API e salvando os resultados coletados em arquivos JSON com o máximo de 100 registros por arquivo.
+* Através de um Job em script Spark, os dados depositados na camada Raw foram tratados e corrigidos quando aplicável e salvos em formato parquet para mantê-los padronizados.            
 
-<br>
+![Evidência 1.1](../evidencias/evid_desafio/1.1.jpg)                  
 
-Para começar o script, foi necessário a importação das seguintes bibliotecas:             
-
-![Evidência 1](../evidencias/evid_desafio/1.jpg)           
-
-_*Evidência 1 - Bibliotecas importadas*_
+_* Evidência 1.1 - Tela do job ``filmes-csv``, evidenciando o bloco de correção dos tipos de dados e valores nulos.*_
 
 <br>
 
-É necessário informar minha credencial para acesso à plataforma. Diferente de um script em máquina, no Lambda não é possível utilizar o ``.env``, porém, o Lambda fornece uma opção para registrar as variáveis de ambiente.               
+![Evidência 1.2](../evidencias/evid_desafio/1.2.jpg)                  
 
-![Evidência 2](../evidencias/evid_desafio/2.jpg)                       
-_*Evidência 2 - Gravação da Variável de Ambiente.*_
-
-<br>
-
-Esse bloco traz as linhas necessárias para configurar o ambiente.
-
-![Evidência 3](../evidencias/evid_desafio/3.jpg)                       
-_*Evidência 3 - Variáveis para acesso à API, configuraçõ de fuso horário, bucket onde serão salvos os resultados e endpoints das buscas.*_
+_* Evidência 1.2 - Tela do job ``séries-csv``, evidenciando o bloco de tratamento de valores nulos, filtros de gênero e salvamento dos dados.*_
 
 <br>
 
-Função para buscar os dados através dos parâmetros elencados.
+![Evidência 1.3](../evidencias/evid_desafio/1.3.jpg)                  
 
-![Evidência 4](../evidencias/evid_desafio/4.jpg)                       
-_*Evidência 4 - Esta função resultará em todos os títulos de terror e mistério.*_
-
-<br>
-
-Enviar os arquivos para o Amazon S3. Inclui o código que faz a criação dos diretórios conforme solicitado.
-
-![Evidência 5](../evidencias/evid_desafio/5.jpg)                       
-_*Evidência 5 - Blocos de código para envio dos dados ao bucket no S3.*_
+_* Evidência 1.1 - Tela do job ``filmes-tmdb``, evidenciando o bloco de tratamento para renomear as colunas.*_
 
 <br>
 
-                  
+![Evidência 1.4](../evidencias/evid_desafio/1.4.jpg)                  
 
-Determinados os parâmetros, a busca é realizada e os resultados salvos.
-
-![Evidência 6](../evidencias/evid_desafio/6.jpg)                       
-_*Evidência 6 - Linhas do bloco ``lambda_handler``.*_
+_* Evidência 1.1 - Tela do job ``series-tmdb``, evidenciando o bloco de correção dos tipos de dados e salvamento dos dados particionados por ``ano``,``mes``,``dia``.*_
 
 <br>
-
-Finalizadas as etapas, o script mostra as informações das quantidade de registros salvos e em quantos arquivos.              
-
-![Evidência 7](../evidencias/evid_desafio/7.jpg)                       
-_*Evidência 7 - No vídeo do desafio, acabo falando a quantidade de arquivos erradas ao mostrar já no bucket. Mas os dados informados no comando ``body`` estão corretos.*_
 
 
 <br><br>
-
-### :file_folder: Criação da Layer
-
-Foi necessária a criação de uma layer para instalação das bibliotecas necessárias para execução do script.
-
-![Evidência 8](../evidencias/evid_desafio/8.jpg)                       
-_*Evidência 8 - Como o arquivo ``.zip`` ultrapassou o limite de 10mb para carregar diretamente na camada, salvei o mesmo no bucket do desafio.*_               
-
-<br>
-
-Também foi preciso a criação de uma Role no IAM.
-
-![Evidência 9](../evidencias/evid_desafio/9.jpg)                       
-_*Evidência 9 - Role ``TMDbFuncao_DesafioFinal``*_
-
-<br>
-
-E após muita tentativa e erro...
-![Evidência 10](../evidencias/evid_desafio/10.jpg)                       
-_*Evidência 10 - ... finalmente chega a mensagem de sucesso.*_
-
-<br>
-
-![Evidência 11](../evidencias/evid_desafio/11.jpg)                       
-_*Evidência 11 - Os arquivos foram salvos de acordo com o solicitado tanto para filmes..*_
-
-<br>
-
-![Evidência 12](../evidencias/evid_desafio/12.jpg)                       
-_*Evidência 12 - ... quanto para as séries.*_
-
-
-<br><br>
-
-:white_check_mark:
-:sun_with_face:
-
 
