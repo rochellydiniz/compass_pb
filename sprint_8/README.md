@@ -169,7 +169,7 @@ _*Evidência Ex6-1 - Após algumas instruções de configuração o TMDB fornece
 
 * No conteúdo presente na Udemy, nos é apresentado um passo-a-passo para criar um teste utilizando endpoint de filme e, após isso, executarmos o exercício.                         
 
-* Para o meu código, utilizei o endpoint de séries para mostrar os títulos melhores avaliados. Apesar de parecer ser igual ao de séries, é possível analisar no código que algumas colunas não são iguais nos dois tipos.
+* Para o meu código, utilizei o endpoint de séries para mostrar os títulos melhores avaliados. Apesar de parecer ser igual ao de filmes, é possível analisar no código que algumas colunas não são iguais nos dois tipos.
 
 ![Evidência Ex6-2](./evidencias/evid_exercicios/5_Ex_TMDB/2.jpg)              
 _*Evidência Ex6-2 - Resultado do script que ao final é salvo também em arquivo ``.csv``.*_
