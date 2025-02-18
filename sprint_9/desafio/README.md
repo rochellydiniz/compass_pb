@@ -1,6 +1,6 @@
-# :jigsaw: Desafio - Sprint 8
+# :jigsaw: Desafio - Sprint 9
 
-:calendar: 20/01 à 03/02/2025
+:calendar: 03/02 à 17/02/2025
 
 <br>
 
@@ -25,9 +25,12 @@ _Popularmente, o gênero de terror traz algumas crenças, dentre elas a Maldiç�
 
 <br>
 
-## :heavy_check_mark: Etapas - Entrega 3
+## :heavy_check_mark: Etapas - Entrega 4
+
+<!--
 
 Obs.: Todas as evidências deste desafio encontram-se no diretório [evidências](../evidencias/evid_desafio/).
+
 
 <br>
 
@@ -38,14 +41,28 @@ Obs.: Todas as evidências deste desafio encontram-se no diretório [evidências
 
 <br>
 
-### :hammer_and_wrench: Camada Trusted
+-->
+
+### :pray: Um minuto da sua atenção.
+
+Esta não é a forma como gostaria de entregar esta etapa do desafio, ou melhor, de não entregar. Precisei retornar à Sprint 7 para refazer ingestões pendentes que reverberou na Sprint 8 e, consequentemente, prejudicou a entrega desta quinzena.
+
+Gostaria de entregar um desafio bem estruturado e com informações que realmente possam fazer com que alguém, nem que seja uma pessoa só, reflita sobre o que estou expondo, demonstrando que, além de ter conquistado o objetivo do PB, que é aprender, também sou capaz de agregar algo mais profundo e significativo.
+
+Trazendo para o cenário corporativo, solicitaria prorrogação do prazo, porém com total ciência de que este pedido impacta e gera consequências.
+
+De qualquer maneira, sigo trabalhando a Sprint 9, comprometida em entregar o mais rápido possível.
+
+Neste diretório ``desafio/``, incluí [arquivos gerados](./Entregáveis/) que seriam referentes às sprints anteriores.
+
+<!--
+### :hammer_and_wrench: Camada Refined
 
 A camada Trusted de um Data Lake reúne os dados já tratados que vieram da camada RAW. Os dados deverão ser salvos no formato ``.parquet``, particionados por data de ingestão no bucket quando no diretório do TMDB.  O Parquet reduz o tempo de leitura por ser de armazenamento colunar, comprime os dados, diminuindo espaço e reduzindo custos.
 
 <br><br>
 
-### :broom: Jobs AWS Glue
-
+### :broom: Passos para trás
 * Através de um Job em script Spark, os dados depositados na camada Raw foram tratados e corrigidos quando aplicável e salvos em formato ``parquet`` para mantê-los padronizados.            
 
 
