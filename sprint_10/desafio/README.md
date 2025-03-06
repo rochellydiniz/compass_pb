@@ -1,6 +1,6 @@
-# :jigsaw: Desafio - Sprint 9
+# :jigsaw: Desafio - Sprint 10
 
-:calendar: 03/02 à 17/02/2025
+:calendar: 17/02 à 05/03/2025
 
 <br>
 
