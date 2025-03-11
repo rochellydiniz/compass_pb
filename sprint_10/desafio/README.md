@@ -54,7 +54,7 @@ Obs.: Todas as evidências deste desafio encontram-se no diretório [evidências
     - [:stop_sign: Classificação Indicativa x Idade Média das Crianças](#gráfico-de-caixa---classificação-indicativa-x-idade-média-das-crianças)
 
 * [:nerd_face: Técnicamente falando...](#-técnicamente-falando)
-* [:thinking: Ah, Rochelly, mas e agora? O que você quer ser?](#-ah-rochelly-mas-e-agora-o-que-você-quer-ser)
+* [:thinking: Ah, Rochelly, mas e agora? O que você quer fazer?](#-ah-rochelly-mas-e-agora-o-que-você-quer-fazer)
 
 <br>
 
@@ -74,6 +74,10 @@ Enfim, trabalhar com esse gênero e com crianças fez meu cérebro eclodir em id
 
 <br>
 
+[Voltar às etapas](#-etapas---entrega-5---final)
+
+<br>
+
 ## :compass: Trajetória
 
 ### Sprint 6
@@ -90,9 +94,13 @@ Enfim, trabalhar com esse gênero e com crianças fez meu cérebro eclodir em id
  
 <br>
 
+[Voltar às etapas](#-etapas---entrega-5---final)
+
+<br>
+
 ### Sprint 7
 
-Na ``Sprint 7`` conhecemos o The Movie Database - TMDb, que nos abriu as portas para as milhares de possibilidades. Nesse momento, comecei a elaborar uma trilha, mas ao final da sprint, com dificuldade para entender o funcionamento do Spark e da API, fiz a entrega da forma como achei que estava certo. Ainda estávamos populando a ``RAW Zone``. Neste momento, usamos o Lambda, com inclusão de camada de instalação de bibliotecas das quais não estavam nativas no serviço e utilização de API para coletar os dados diretamente do servidor do TMDb e salvar em formato ``Json`` no bucket.
+Na ``Sprint 7`` conhecemos o The Movie Database - TMDb, que nos abriu as portas para as milhares de possibilidades. Nesse momento, comecei a elaborar uma trilha, mas ao final da sprint, com dificuldade para entender o funcionamento da API, fiz a entrega da forma como achei que estava certo. Ainda estávamos populando a ``RAW Zone``. Neste momento, usamos o Lambda, com inclusão de camada de instalação de bibliotecas das quais não estavam nativas no serviço e utilização de API para coletar os dados diretamente do servidor do TMDb e salvar em formato ``Json`` no bucket.
 
 ![Evidência s7_1](../evidencias/evid_desafio/Sprints_anteriores/s7_1.jpg)                       
 
@@ -105,9 +113,13 @@ _*Evidência s7_2 - Evidência do arquivo ``Json`` salvo por caminho de diretór
 
 <br>
 
+[Voltar às etapas](#-etapas---entrega-5---final)
+
+<br>
+
 ### Sprint 8
 
-A ``Sprint 8`` foi elaborada para tratamento e manipulação dos dados da camada RAW com salvamento em formato ``Parquet`` na camada Trusted utilizando jobs do AWS Glue. Foi neste momento que percebi o tamanho do B.O. que estava se formando, e percebi que os dados que tinha disponível até então, não serviriam para minha análise. Ainda assim, entreguei a "base" da Trusted e iniciei o recálculo da rota.
+A ``Sprint 8`` foi elaborada para tratamento e manipulação dos dados da camada RAW com salvamento em formato ``Parquet`` na camada Trusted utilizando jobs do AWS Glue. Foi neste momento que percebi o tamanho do B.O. que estava se formando, e percebi que os dados que tinha disponível até então, não seriam suficientes para minha análise. Ainda assim, entreguei a "base" da Trusted e iniciei o recálculo da rota.
 
 <br>
 
@@ -132,6 +144,10 @@ _*Evidência s8_3 - Detalhes do Schema ``filmes`` criado na Database ``desafio.f
 
 _*Evidência s8_4 - Tabela ``series.'desafio.final-raw.csv.data'`` criada com sucesso.*_                       
 Criada com sucesso? kkkk Tadinha, tão inocente.
+
+<br>
+
+[Voltar às etapas](#-etapas---entrega-5---final)
 
 <br>
 
@@ -167,6 +183,7 @@ E adivinha, só! Tive que refazer depois.
 
 <br>
 
+[Voltar às etapas](#-etapas---entrega-5---final)
 
 <br>
 
@@ -175,44 +192,61 @@ E adivinha, só! Tive que refazer depois.
 Na ``Sprint 10``, teoricamente com toda a base de dados pronta para criar um ``Dashboard``, tivemos o primeiro contato com o QuickSight. Ferramenta para análise de dados da AWS que é ``EXTREMAMENTE`` difícil de manipulação devido suas limitações. E foi começando a montar meu dashboard que comecei a notar a falta de UMA PESSOA que foi minha referência de busca no TMDb. Justamente, a Heather O' Rourke de "Poltergeist: O Fenômeno" não estava presente no gráfico onde estão elencadas as crianças por ordem crescente de idade. Ela que esteve presente em quase todos os READMEs dos desafios, que decorei o código no TMDb, e que só não aparece em comentários dos vídeos, porque precisei cortar o trecho para não ultrapassar o tempo limite.
 Pois é... ontem, 09 de março, percebi que minha base estava TOTALMENTE incompleta. Ao solicitar que fossem feitas as ingestões dos filmes pelos gêneros de Terror, Mistério e Thriller (este foi agregado por fazer parte dos outros dois), ao invés de utilizar ``|`` para selecionar os filmes, utilizei ``&``. E então, tudo foi refeito, mais uma vez.
 
+<br>
 
-
+[Voltar às etapas](#-etapas---entrega-5---final)
 
 <br>
 
 ## :angel: Análise - "Infância nas Sombras - Quando o Medo tem Rosto de Criança" :japanese_ogre:
 
-Desde o início, quando comecei a pensar sobre o tema, minha mentalidade mudou quanto a este assunto. E justamente a questão que mais precisaria ser respondida, neste modelo não foi possível uma resposta de fato.
+Desde o início, quando comecei a pensar sobre o tema, minha mentalidade mudou quanto a este assunto. E justamente a questão que mais precisaria ser respondida, neste modelo de análise não é possível ter uma resposta de fato.
 
 > Quais os impactos psicológicos podem ser causados ao expôr atores crianças (até 12 anos de idade) para contracenar em produções dos gêneros de Terror? 
 
 Veja bem, estamos falando de um rol de gêneros de filmes e séries que em sua grande maioria não são apropriados nem para adolescentes, para crianças menos ainda. Por que, então, produzir estes títulos que podem causar traumas aos pequenos, principalmente se, em geral, o intuito dessas produções é de entreter adultos?
 
-Toda a análise foi baseada em filmes dos gênero de terror, mistério e thriller para os filmes e apenas mistério para as séries, devido os outros gêneros não fazerem parte do catálogo para este tipo de produção.
+Toda a análise foi baseada nos gênero de terror, mistério e thriller para os filmes e apenas mistério para as séries, devido os outros gêneros não fazerem parte do catálogo para este tipo de produção.
 
-<br><br>
+<br>
+
+[Voltar às etapas](#-etapas---entrega-5---final)
+
+<br>
 
 #### :world_map: Gráfico Mapa Preenchido - Países com Mais Produções
 Distribuição global da quantidade títulos produzidos estrelados por crianças.
 
-![Países com mais produções](../evidencias/evid_desafio/QuickSight/1.jpg)
+![Países com mais produções](../evidencias/evid_desafio/Sprint_10/QuickSight/1.jpg)
 _*Evidência 1 - Gráfico que cruza as informações de país de origem ``sg_pais_origem`` com a quantidade de títulos produzidos ``id_titulo (contagem de distintos)``. Resultados: Países com a cor azul são os que menos produziram (EX: BR), os amarelos intermediários (EX: RU) e Vermelhos os que mais produziram (EX: EUA). Resultados: Como esperado, a quantidade de títulos foi aumentando com o passar dos anos, apesar de em alguns anos da década de 2010, houve variação*_
+
+<br>
+
+[Voltar às etapas](#-etapas---entrega-5---final)
 
 <br>
 
 #### :bar_chart: Gráfico de Barras Verticais - Evolução ao Longo dos Anos
 Quantidade de títulos lançados por ano com crianças no elenco principal.
 
-![Evolução ao Longo dos Anos](../evidencias/evid_desafio/QuickSight/2.jpg)
+![Evolução ao Longo dos Anos](../evidencias/evid_desafio/Sprint_10/QuickSight/2.jpg)
 _*Evidência 2 - Gráfico que cruza as informações de país de origem ``sg_pais_origem`` com a quantidade de títulos produzidos ``id_titulo (contagem de distintos)``.*_
+
+<br>
+
+[Voltar às etapas](#-etapas---entrega-5---final)
 
 <br>
 
 #### :doughnut: Gráfico de Rosca - Distribuição dos Títulos
 Comparação da quantidade de títulos entre filmes e séries com crianças no elenco.
 
-![Distribuição dos Títulos](../evidencias/evid_desafio/QuickSight/3.jpg)
+![Distribuição dos Títulos](../evidencias/evid_desafio/Sprint_10/QuickSight/3.jpg)
 _*Evidência 3 - Gráfico que relaciona o tipo de produção (Filme ou Série) ``tp_titulo`` com a quantidade de títulos produzidos ``id_titulo (contagem de distintos)``.*_
+
+<br>
+
+[Voltar às etapas](#-etapas---entrega-5---final)
 
 <br>
 
@@ -220,8 +254,12 @@ _*Evidência 3 - Gráfico que relaciona o tipo de produção (Filme ou Série) `
 #### :cloud: Nuvem de Palavras - Principais Temas em Filmes de Terror
 Palavras-chave mais frequentes em produções de Terror, Mistério e Thriller estreladas por crianças.
 
-![Principais Temas em Filmes de Terror](../evidencias/evid_desafio/QuickSight/4.jpg)
+![Principais Temas em Filmes de Terror](../evidencias/evid_desafio/Sprint_10/QuickSight/4.jpg)
 _*Evidência 4 - A nuvem de palavras faz a contagem das palavras-chave ``ds_keyword`` de cada título e mostra com tamanhos variados a depender da quantidade de títulos relacionado a ele.*_
+
+<br>
+
+[Voltar às etapas](#-etapas---entrega-5---final)
 
 <br>
 
@@ -230,8 +268,12 @@ _*Evidência 4 - A nuvem de palavras faz a contagem das palavras-chave ``ds_keyw
 #### :pizza: Gráfico de Pizza - Crianças x Gênero
 Distribuição de crianças no elenco principal por sexo.
 
-![Crianças x Gênero](../evidencias/evid_desafio/QuickSight/5.jpg)
+![Crianças x Gênero](../evidencias/evid_desafio/Sprint_10/QuickSight/5.jpg)
 _*Evidência 5 - Relação entre o sexo das crianças ``tp_sexo``, que estão presentes nesta análise. Respostas: Neste caso os valores foram bem distribuídos, sendo 49% de crianças do sexo feminino e 51% do gênero feminino.*_
+
+<br>
+
+[Voltar às etapas](#-etapas---entrega-5---final)
 
 <br>
 
@@ -239,8 +281,12 @@ _*Evidência 5 - Relação entre o sexo das crianças ``tp_sexo``, que estão pr
 #### :chart_with_upwards_trend: Gráfico de Linhas - O Crescimento de Filmes e Séries com Crianças
 Tendência do número de títulos lançados ao longo das décadas, comparando a evolução entre filmes e séries do gênero.
 
-![Crianças x Gênero](../evidencias/evid_desafio/QuickSight/6.jpg)
+![Crianças x Gênero](../evidencias/evid_desafio/Sprint_10/QuickSight/6.jpg)
 _*Evidência 5 - Período dividido por décadas ``vl_decada_lancamento``, evidenciando o crescimento nas quantidades de produções lançadas ``id_titulo (Constagem de distintos)`` e separados por tipo de produção. Respostas: A produção tanto de filmes quanto de séries cresceu exponencialmente no decorrer das décadas. Nota-se que houve muitos mais filmes do que séries e que na década de 2020, tivemos uma queda abrupta que podemos considerar, primeiramente pela questão de ainda estarmos no meio do período, porém também, a pandemia de SARS-Cov que "congelou" o mundo por inteiro.*_
+
+<br>
+
+[Voltar às etapas](#-etapas---entrega-5---final)
 
 <br>
 
@@ -248,8 +294,12 @@ _*Evidência 5 - Período dividido por décadas ``vl_decada_lancamento``, eviden
 #### :popcorn: Mapa de Árvore - Gêneros Relacionados ao Terror: Quais São os Mais Frequentes?
 Mapa de árvore mostrando os gêneros mais comuns em títulos que possuem elementos de Terror, Mistério ou Thriller.
 
-![Gêneros Relacionados ao Terror: Quais São os Mais Frequentes?](../evidencias/evid_desafio/QuickSight/7.jpg)
+![Gêneros Relacionados ao Terror: Quais São os Mais Frequentes?](../evidencias/evid_desafio/Sprint_10/QuickSight/7.jpg)
 _*Evidência 7 - Os gêneros foram agrupados ``nm_genero`` e quantificados ``id_titulo``, para visualizar os demais "sub-gêneros" que acompanham os principais desta análise. Respostas: Drama exerce peso tão grande quanto os gêneros principais, seguido após uma lacuna considerável, os gêneros de Crime, Ação, Ficção Científica etc.*_
+
+<br>
+
+[Voltar às etapas](#-etapas---entrega-5---final)
 
 <br>
 
@@ -257,16 +307,24 @@ _*Evidência 7 - Os gêneros foram agrupados ``nm_genero`` e quantificados ``id_
 #### :tv: Gráfico de Caixa - Idades das Crianças x Tipo de Produção
 Comparação da idade das crianças protagonistas no momento do lançamento, analisando diferenças entre filmes e séries.
 
-![dades das Crianças x Tipo de Produção](../evidencias/evid_desafio/QuickSight/8.jpg)
+![dades das Crianças x Tipo de Produção](../evidencias/evid_desafio/Sprint_10/QuickSight/8.jpg)
 _*Evidência 8 - Aqui foi feito uma análise sobre a variação de idade sobre os tipos de produção. Respostas: *Filmes* - Idade mais nova encontrada foi 05 ano, mais velha foi 12 anos e a mediana foi 10 anos, no entanto, o 1º e o 3º quartil mostra que a maior parte das crianças são mais velhas pelo resultado de 09 e 12 anos. *Séries* - Idade mais nova encontrada foi 01 ano, mais velha foi 12 anos e a mediana foi 09 anos, no entanto, nesta situação, o 1º e 3º quartil mostram que há uma distribuição um pouco maior entre as idades pelo resultado de 07 e 11 anos.*_
+
+<br>
+
+[Voltar às etapas](#-etapas---entrega-5---final)
 
 <br>
 
 #### :trophy: Gráfico de Barras empilhadas - Crianças com Maior Número de Produções no Gênero
 Distribuição do número de participações em produções.
 
-![Idades das Crianças x Tipo de Produção](../evidencias/evid_desafio/QuickSight/9.jpg)
+![Idades das Crianças x Tipo de Produção](../evidencias/evid_desafio/Sprint_10/QuickSight/9.jpg)
 _*Evidência 9 - Este gráfico informa as crianças que mais estiveram em elencos principais nos gêneros principais ainda enquanto pertencentes a faixa etárea infantil. Resultados: A atriz Chloë Grace Moretz, até 12 anos, esteve presente em 6 filmes e 1 série, totalizando 07 priduções.*_
+
+<br>
+
+[Voltar às etapas](#-etapas---entrega-5---final)
 
 <br>
 
@@ -274,9 +332,13 @@ _*Evidência 9 - Este gráfico informa as crianças que mais estiveram em elenco
 Média da idade das crianças do elenco principal na data em que as produções foram lançadas.                 
 
 
-![Idade Média das Crianças](../evidencias/evid_desafio/QuickSight/10.jpg)                                                   
+![Idade Média das Crianças](../evidencias/evid_desafio/Sprint_10/QuickSight/10.jpg)                                                   
 
 _*Evidência 10 - Este KPI evidencia que em dentre todas as produções de todo o período disponível (1900-2025), a média de idade foi de 8,3 anos (2019), tendo uma ligeira diminuição (-0,2) comparado ao ano de 2014 (8,5 anos).*_
+
+<br>
+
+[Voltar às etapas](#-etapas---entrega-5---final)
 
 <br>
 
@@ -285,9 +347,13 @@ _*Evidência 10 - Este KPI evidencia que em dentre todas as produções de todo 
 Média da idade das crianças do elenco principal na data em que as produções foram lançadas.                 
 
 
-![FILMES - Relação de Crianças Elencadas em gêneros de Terror](../evidencias/evid_desafio/QuickSight/11.jpg)                                                   
+![FILMES - Relação de Crianças Elencadas em gêneros de Terror](../evidencias/evid_desafio/Sprint_10/QuickSight/11.jpg)                                                   
 
 _*Evidência 11 - Tabela que mostra quais filmes tiveram as crianças no elenco, ordenadas pela idade em ordem crescente. É possível verificar rapidamente que um mesmo filme, sendo um deles possivelmente um remake ``Cemitério Maldito (1989) e (2019)`` elencou 3 crianças muito novas para estrelarem o título.*_
+
+<br>
+
+[Voltar às etapas](#-etapas---entrega-5---final)
 
 <br>
 
@@ -296,9 +362,13 @@ _*Evidência 11 - Tabela que mostra quais filmes tiveram as crianças no elenco,
  Medição de Popularidade, Participação e Avaliações em Filmes e Séries                 
 
 
-![Popularidade](../evidencias/evid_desafio/QuickSight/12.jpg)                                                   
+![Popularidade](../evidencias/evid_desafio/Sprint_10/QuickSight/12.jpg)                                                   
 
 _*Evidência 12 - Gráfico que traz 3 valores (``vl_popularidade_pessoa (Máx), vl_idade_lancamento (Média) e qt_titulos_participacao (Contagem de Distintos)``). Cada ponto no gráfico corresponde a um ator, e suas métricas são exibidas como uma combinação dessas três variáveis. A distribuição das linhas ao redor do gráfico ajuda a visualizar as diferenças entre os atores, facilitando a comparação. Respostas: Por exemplo, Millie Bobby Brown está no centro de várias linhas e tem uma popularidade alta (linha laranja), enquanto outros atores, como Ricky He e Fiona Dolman, podem mostrar perfis diferentes de popularidade e participação.*_
+
+<br>
+
+[Voltar às etapas](#-etapas---entrega-5---final)
 
 <br>
 
@@ -306,9 +376,13 @@ _*Evidência 12 - Gráfico que traz 3 valores (``vl_popularidade_pessoa (Máx), 
 ### :fire: Mapa de Calor - Palavras-Chave ao Longo das Décadas
 Análise das _keywords_ mais frequentes em títulos dos gêneros protagonizados por crianças ao longo das décadas
 
-![Palavras-Chave ao Longo das Décadas](../evidencias/evid_desafio/QuickSight/13.jpg)                                                   
+![Palavras-Chave ao Longo das Décadas](../evidencias/evid_desafio/Sprint_10/QuickSight/13.jpg)                                                   
 
 _*Evidência 13 - O comprimento de cada barra indica a frequência relativa da palavra-chave em cada década, e as cores ajudam a distinguir os diferentes períodos de tempo. As palavras-chave com barras mais longas indicam um maior uso nos títulos dessa década. Esse gráfico permite perceber como as temáticas e tendências nos filmes e séries estrelados por crianças evoluíram ao longo do tempo, com destaque para temas como suspense, terror e elementos sobrenaturais. Respostas: ``Murder`` sempre esteve presente, mas no decorrer das décadas, foi ganhando mais força.*_
+
+<br>
+
+[Voltar às etapas](#-etapas---entrega-5---final)
 
 <br>
 
@@ -316,9 +390,13 @@ _*Evidência 13 - O comprimento de cada barra indica a frequência relativa da p
 ### :star: Gráfico de Dispersão - Popularidade por Idade
 Distribuição com destaque para gênero e quantidade de produções.   
 
-![Popularidade por Idade](../evidencias/evid_desafio/QuickSight/14.jpg)                                                   
+![Popularidade por Idade](../evidencias/evid_desafio/Sprint_10/QuickSight/14.jpg)                                                   
 
 _*Evidência 14 - O gráfico revela como a popularidade está distribuída entre diferentes idades, com destaque para a diferença entre os gêneros e a quantidade de títulos estrelados. É possível observar se existe algum padrão, como uma maior popularidade entre as faixas etárias mais jovens ou se um gênero tem mais destaque em produções. Neste caso ele mostra a relação entre sua popularidade, idade e quantidade de produções em que participaram. Aqui cada ponto é uma criança.*_
+
+<br>
+
+[Voltar às etapas](#-etapas---entrega-5---final)
 
 <br>
 
@@ -326,27 +404,45 @@ _*Evidência 14 - O gráfico revela como a popularidade está distribuída entre
 ### :stop_sign: Gráfico de Caixa - Classificação Indicativa x Idade Média das Crianças
 Variação das classificações indicativas das produções, destacando a distribuição das restrições por idade.
 
-![Classificação Indicativa x Idade Média das Crianças](../evidencias/evid_desafio/QuickSight/15.jpg)                                                   
+![Classificação Indicativa x Idade Média das Crianças](../evidencias/evid_desafio/Sprint_10/QuickSight/15.jpg)                                                   
 
 _*Evidência 15 - Chegamos ao ponto em que podemos verificar que, classificações indicativas mais baixas (10 e 12) tendem a ter idades médias entre 6 e 10 anos, indicando que as produções com essas classificações geralmente envolvem crianças mais novas (talvez envolvendo títulos infantis, como Scooby Doo) e, nas classificações indicativas mais altas (14, 16, 18), as idades médias tendem a ser mais altas, sugerindo que as produções têm protagonistas com idades mais próximas de 12 a 14 anos. Ainda assim, percebe-se que não há diferença discrepante quanto à idade em geral, independente da classificação ser mais alta, logo, mais "pesada".*_
 
 <br>
 
-
-## :nerd_face: Técnicamente falando......
-Para trazer todas realizar esta análise foram carregadas mais de 586M de linhas no QuickSight, o que levou aproximadamente 4,5 horas para concluir.
-
-![Popularidade](../evidencias/evid_desafio/QuickSight/16.jpg)                                                   
-
-_*Evidência 16 - *_
+[Voltar às etapas](#-etapas---entrega-5---final)
 
 <br>
 
 
+## :nerd_face: Técnicamente falando......
 
-## :thinking: Ah, Rochelly, mas e agora? O que você quer ser?
+Aqui elencarei algumas informações e correções realizadas pelas sprints anteriores.
 
-Depois de muito trabalho árduo e noites sem dormir, percebo que evoluí bastante e o que mais me deixou animada na produção foi a àrea de engenharia de dados. É muito satisfatório descobrir um dado e com a dedicação e tratamentos necessários, transformar em informação, algo como um paleontólogo que descobre um osso fossilizado que com dedicação e tratamento, transforma em informações de uma nova espécie de "dinossauro híbrido" (tudo bem, parei com as analogias).
+<br>
+
+![Popularidade](../evidencias/evid_desafio/Sprint_10/QuickSight/16.jpg)                                                   
+
+_*Evidência 16 - Tela do QuickSight para importação e verificação dos dados a serem utilizados na criação do Dashboard.*_
+
+<br>
+
+Modelo de dados corrigido: 
+
+![Modelagem de dados corrigida](./Entregáveis/Sprint_10_QuickSight_Dashboard/s10_modelagem_desafiofinal_refined_data.png)
+
+Estava faltando a tabela ``fato_pessoa``.
+
+<br>
+
+[Voltar às etapas](#-etapas---entrega-5---final)
+
+<br>
+
+
+## :thinking: Ah, Rochelly, mas e agora? O que você quer fazer?
+
+Depois de muito trabalho árduo e noites sem dormir, percebo que evoluí bastante e o que mais me deixou animada na produção foi a área de engenharia de dados. É muito satisfatório descobrir um dado e com a dedicação e tratamentos necessários, transformar em informação, algo como um paleontólogo que descobre um osso fossilizado que com dedicação e tratamento, transforma em informações de uma nova espécie de "dinossauro híbrido" (tudo bem, parei com as analogias).
 
 <br>
 
@@ -358,7 +454,14 @@ Não tenho palavras para descrever o quanto a Marli foi (e é) necessária e ind
 
 Foram 05 meses de muita intensidade, evolução e que deixarão muitas saudades.
 
+Até breve!                
+:heart:
 <br><br>
 
-:white_check_mark:
+<br>
+
+[Voltar às etapas](#-etapas---entrega-5---final)
+
+<br>
+
 :sun_with_face:

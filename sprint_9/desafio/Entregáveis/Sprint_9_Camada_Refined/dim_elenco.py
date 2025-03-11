@@ -17,7 +17,7 @@ job = Job(glueContext)
 job.init(args['JOB_NAME'], args)
 
 # Nome do banco
-base_dados = "desafio.final-trusted.data"
+base_dados = "desafiofinal_trusted_data"
 
 # Carregar os dados da camada Trusted
 trusted_tb_elenco = glueContext.create_dynamic_frame.from_catalog(database=base_dados, table_name="tb_elenco").toDF()

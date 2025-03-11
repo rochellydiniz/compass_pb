@@ -1,6 +1,8 @@
 # Job Glue para juntar palavras-chave de filmes e series e tratar os dados
 
 import sys
+import boto3
+import re
 from datetime import datetime
 from math import ceil
 from awsglue.transforms import *
@@ -13,6 +15,7 @@ from pyspark.sql.functions import col
 from pyspark.sql.types import StringType, IntegerType
 
 
+
 ## @params: [JOB_NAME]
 args = getResolvedOptions(sys.argv, ['JOB_NAME'])
 
@@ -22,16 +25,45 @@ spark = glueContext.spark_session
 job = Job(glueContext)
 job.init(args['JOB_NAME'], args)
 
-# Ler os dados da RAW Zone
-caminho_entrada_s3_filmes = "s3://desafio-final.data-lake/RAW Zone/TMDB/JSON/keywords_filmes/2025/02/15/"
-caminho_entrada_s3_series = "s3://desafio-final.data-lake/RAW Zone/TMDB/JSON/keywords_series/2025/03/03/"
+# Configuração do cliente S3
+s3_client = boto3.client('s3')
+nome_bucket = "desafio-final.data-lake"
 
+# Função para encontrar a última partição disponível no S3
+def obter_ultima_particao(bucket, prefixo_base):
+    response = s3_client.list_objects_v2(Bucket=bucket, Prefix=prefixo_base)
+
+    if "Contents" not in response or not response["Contents"]:
+        print(f"Nenhuma partição encontrada para {prefixo_base}!")
+        return None
+
+    datas_encontradas = []
+    for obj in response["Contents"]:
+        caminho = obj["Key"].split("/")
+        try:
+            ano, mes, dia = int(caminho[-4]), int(caminho[-3]), int(caminho[-2])
+            data = datetime(ano, mes, dia)
+            datas_encontradas.append((data, f"s3://{bucket}/{prefixo_base}{ano}/{mes:02d}/{dia:02d}/"))
+        except (ValueError, IndexError):
+            continue
+
+    if not datas_encontradas:
+        print(f"Nenhuma partição válida encontrada para {prefixo_base}!")
+        return None
+
+    ultima_particao = max(datas_encontradas, key=lambda x: x[0])[1]
+    return ultima_particao
+
+# Buscar dinamicamente a última partição disponível
+caminho_entrada_s3_filmes = obter_ultima_particao(nome_bucket, "RAW Zone/TMDB/JSON/keywords_filmes/")
+caminho_entrada_s3_series = obter_ultima_particao(nome_bucket, "RAW Zone/TMDB/JSON/keywords_series/")
+
+# Carregar os dados
 df_keywords_filmes = spark.read.format("json").option("multiline", "true").load(caminho_entrada_s3_filmes)
 df_keywords_series = spark.read.format("json").option("multiline", "true").load(caminho_entrada_s3_series)
 
-ano = "2025"
-mes = "02"
-dia = "15"
+# Extração de ano, mês e dia do caminho encontrado
+ano, mes, dia = caminho_entrada_s3_filmes.split("/")[-4], caminho_entrada_s3_filmes.split("/")[-3], caminho_entrada_s3_filmes.split("/")[-2]
 
 # Tratar e renomear colunas
 

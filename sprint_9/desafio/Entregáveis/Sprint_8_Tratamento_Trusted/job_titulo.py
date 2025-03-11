@@ -7,6 +7,9 @@ from awsglue.job import Job
 from pyspark.sql.functions import col, upper, coalesce, lit
 from pyspark.sql.types import StringType
 from math import ceil
+import boto3
+from datetime import datetime
+
 
 ## @params: [JOB_NAME]
 args = getResolvedOptions(sys.argv, ['JOB_NAME'])
@@ -16,14 +19,51 @@ spark = glueContext.spark_session
 job = Job(glueContext)
 job.init(args['JOB_NAME'], args)
 
+# Configuração do cliente S3
+s3_client = boto3.client('s3')
+nome_bucket = "desafio-final.data-lake"
+
+def obter_ultima_particao(bucket, prefixo_base):
+
+    response = s3_client.list_objects_v2(Bucket=bucket, Prefix=prefixo_base)
+
+    if "Contents" not in response or not response["Contents"]:
+        print(f"Nenhuma partição encontrada para {prefixo_base}!")
+        return None
+
+    datas_encontradas = []
+    for obj in response["Contents"]:
+        caminho = obj["Key"].split("/")
+        try:
+            # Ajustando para buscar os valores no formato `nr_ano=YYYY/nr_mes=MM/nr_dia=DD/`
+            ano = (caminho[-4].split("=")[1])
+            mes = (caminho[-3].split("=")[1])
+            dia = (caminho[-2].split("=")[1])
+            data = datetime(int(ano), int(mes), int(dia))
+            datas_encontradas.append((data, f"s3://{bucket}/" + "/".join(caminho[:-1]) + "/"))
+        except (ValueError, IndexError):
+            continue
+
+    if not datas_encontradas:
+        print(f"Nenhuma partição válida encontrada para {prefixo_base}!")
+        return None
+
+    ultima_particao = max(datas_encontradas, key=lambda x: x[0])[1]
+    return ultima_particao
+    
+    
 # Ler dados
-caminho_entrada_s3_tmdb = "s3://desafio-final.data-lake/Trusted/TMDB/Parquet/tb_titulo_tmdb/nr_ano=2025/nr_mes=02/nr_dia=08/"
+caminho_entrada_s3_tmdb = obter_ultima_particao(nome_bucket, "Trusted/TMDB/Parquet/tb_titulo_tmdb/")
 caminho_entrada_s3_local = "s3://desafio-final.data-lake/Trusted/Local/Parquet/tb_titulo_local/"
 
 df_tmdb = spark.read.parquet(caminho_entrada_s3_tmdb)
 df_local = spark.read.parquet(caminho_entrada_s3_local)
 
-ano, mes, dia = "2025", "02", "08"
+ano, mes, dia = (
+    caminho_entrada_s3_tmdb.split("/")[-4].split("=")[1],
+    caminho_entrada_s3_tmdb.split("/")[-3].split("=")[1],
+    caminho_entrada_s3_tmdb.split("/")[-2].split("=")[1],
+)
 
 # Selecionar colunas e tratar nulos
 df_tmdb = df_tmdb.select(

@@ -7,6 +7,7 @@ from awsglue.job import Job
 import pyspark.sql.functions as F
 from awsglue.dynamicframe import DynamicFrame
 from datetime import datetime, timedelta
+from pyspark.sql.types import IntegerType
 
 ## @params: [JOB_NAME]
 args = getResolvedOptions(sys.argv, ['JOB_NAME'])
@@ -33,7 +34,7 @@ df_dim_tempo = df_dim_tempo.withColumn(
         F.format_string("%04d", F.year(F.col("dt"))),
         F.format_string("%02d", F.month(F.col("dt"))),
         F.format_string("%02d", F.dayofmonth(F.col("dt")))
-    )
+    ).cast("int")
 ).withColumn("nr_ano", F.year(F.col("dt"))
 ).withColumn("nr_mes", F.month(F.col("dt"))
 ).withColumn("nr_dia", F.dayofmonth(F.col("dt"))

@@ -5,6 +5,7 @@ SELECT
     tp_titulo,
     nm_titulo_principal,
     nm_titulo_original,
+    sg_pais_origem,
     sg_idioma
 FROM desafiofinal_trusted_data.tb_titulo;
 
@@ -23,17 +24,6 @@ CREATE VIEW desafiofinal_refined_data.dim_keyword AS
     id_keyword,
     ds_keyword
 FROM desafiofinal_trusted_data.tb_keyword;
-
-------------------------------
--- dim_pessoa
-CREATE VIEW desafiofinal_refined_data.dim_pessoa AS
-SELECT 
-    id_pessoa,
-    nm_pessoa,
-    tp_sexo_pessoa,
-    dt_nascimento,
-    dt_falecimento
-FROM desafiofinal_trusted_data.tb_pessoa
 
 ------------------------------
 -- dim_classificacao
